@@ -1,0 +1,86 @@
+.main {
+    width: 100%;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+.main a {
+    font-size: 16px;
+    line-height: 27px;
+    font-weight: 500;
+}
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.side {
+    display: flex;
+    align-items: center;
+}
+
+.side a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;   
+}
+.side a span {
+    margin-left: 2px;
+}
+
+.side a span:hover {
+    text-decoration: underline;
+}
+
+.socialItems {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.socialItems a {
+    margin-right: 15px;
+    transition-duration: .3s;
+}
+.socialItems a:hover {
+    transform: scale(1.05);
+}
+.bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: -30px
+}
+.bot img {
+    margin: 0 auto;
+    width: 125px;
+}
+.menuItem a {
+    color: white;
+    transition-duration: .3s;
+}
+.menuItem a:hover {
+    color: #ffaf84;
+}
+.menuItem a.active {
+    color: #FC5E08;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+}
+.logoContainer {
+    width: 140px;
+    display: flex;
+    justify-content: center;
+}
+.botContainer {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}

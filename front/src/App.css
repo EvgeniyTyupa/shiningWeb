@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat' !important;
+  background-color: gray;
+  background-image: url("./Assets/images/main_home_bg.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+  background-attachment: scroll;
+}
