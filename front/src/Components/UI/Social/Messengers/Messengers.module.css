@@ -1,0 +1,24 @@
+.main {
+    width: 100%;
+}
+.main label {
+    color: white;
+    font-size: 12px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+.line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+.line a {
+    opacity: .5;
+    transition-duration: .3s;
+    color: white;
+}
+.line a:hover {
+    opacity: 1;
+}

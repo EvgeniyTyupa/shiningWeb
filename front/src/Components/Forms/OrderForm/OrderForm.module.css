@@ -1,0 +1,51 @@
+.field {
+    margin-bottom: 30px;
+}
+
+.field input {
+    font-weight: 500 !important;
+    font-family: 'Roboto' !important;
+    opacity: 1 !important;
+    color: white !important;
+    z-index: 1;
+}
+
+.submit {
+    font-weight: bold !important;
+    font-size: 18px !important;
+    letter-spacing: 0.15em !important;
+    width: 100%;
+    height: 60px;
+    margin-top: 15px !important;
+}
+.secondField {
+    margin-bottom: 20px;
+}
+
+.messengers {
+    margin-bottom: 10px;
+}
+.rules {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.rule {
+    color: white;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    margin-bottom: 5px;
+}
+.ruleMark {
+    color: black;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    background: white;
+    align-self: flex-start;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
