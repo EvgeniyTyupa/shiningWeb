@@ -1,0 +1,11 @@
+.main {
+    background-color: #DFDFDF;
+    display: flex;
+    flex-direction: column;
+}
+.main img {
+    object-fit: cover;
+}
+.info {
+    padding: 20px 25px;
+}

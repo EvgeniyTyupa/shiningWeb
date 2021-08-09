@@ -8,6 +8,8 @@ import 'aos/dist/aos.css'
 import OrderForm from '../../Components/Forms/OrderForm/OrderForm'
 import { useTranslation } from 'react-i18next'
 import { useMerities } from './useMerities'
+import service_img_tmp from '../../Assets/images/servises_card_bg.jpg'
+import Slider from '../../Components/Common/Slider/Slider'
 
 const Main = (props) => {
     const { t } = useTranslation()
@@ -17,6 +19,14 @@ const Main = (props) => {
     useEffect(() => {
         Aos.init({ duration: 1000 })
     }, []);
+
+    const services = [
+        { _id: "123", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
+        { _id: "124", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
+        { _id: "125", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
+        { _id: "126", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
+        { _id: "127", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
+    ]
 
     return(
         <div className={classes.main}>
@@ -38,14 +48,16 @@ const Main = (props) => {
                         <div className={classes.meritie}>
                             <div className={classes.meritieBack}/>
                             <label>{index + 1}</label>
-                            <img src = {item.icon}/>
+                            <img src = {item.icon} alt = "metrie"/>
                             <span>{item.text}</span>
                         </div>
                     ))}
                 </div>
             </div>
             <div className={classes.services}>
-                
+                <div className={classes.servicesContainer}>
+                    <Slider items={services}/>
+                </div>
             </div>
         </div>
     )
