@@ -7,6 +7,8 @@ import {Provider} from "react-redux";
 import store from './Redux/reduxStore';
 import Preloader from './Components/Common/Preloader/Preloader';
 import './Utils/i18n.js';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 ReactDOM.render(

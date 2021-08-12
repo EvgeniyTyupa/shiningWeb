@@ -9,7 +9,7 @@ import OrderForm from '../../Components/Forms/OrderForm/OrderForm'
 import { useTranslation } from 'react-i18next'
 import { useMerities } from './useMerities'
 import service_img_tmp from '../../Assets/images/servises_card_bg.jpg'
-import Slider from '../../Components/Common/Slider/Slider'
+import SliderComponent from '../../Components/Common/Slider/SliderComponent'
 
 const Main = (props) => {
     const { t } = useTranslation()
@@ -56,7 +56,7 @@ const Main = (props) => {
             </div>
             <div className={classes.services}>
                 <div className={classes.servicesContainer}>
-                    <Slider items={services}/>
+                    <SliderComponent items={services}/>
                 </div>
             </div>
         </div>
