@@ -3,3 +3,52 @@ body {
   font-family: 'Montserrat' !important;
   background-color: gray;
 }
+
+.slick-slider {
+  height: 90%
+}
+.slick-list {
+  height: 100%;
+}
+.slick-track {
+  height: 100%;
+}
+.slick-slide{
+  transition-duration: .6s;
+  transform: scale(.7);
+  opacity: .7;
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-dots {
+  bottom: 5vh !important;
+}
+.slick-slide.slick-center {
+  transition-duration: .6s;
+  transform: scale(1) translateY(110px);
+  opacity: 1;
+}
+.slick-dots li.slick-active button:before {
+  color: #FC5E08 !important;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before{
+  color: #f5ac84 !important;
+}
+.slick-next {
+  right: 80px !important;
+  color: gray !important;
+  z-index: 1 !important;
+}
+.slick-prev {
+  left: 80px !important;
+  color: gray !important;
+  z-index: 1 !important;
+}
+.slick-prev:before, .slick-next:before {
+  color: #9F9F9F !important;
+  font-size: 32px;
+}

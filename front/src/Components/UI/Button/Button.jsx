@@ -3,13 +3,15 @@ import { cx } from '../../../Utils/classnames'
 import classes from './Button.module.css'
 
 const CustomButton = (props) => {
+    const { className, action, type = "button", text } = props
+
     return(
         <Button 
-            className={cx(classes.main, props.className)} 
-            onClick={props.action}
-            type={props.type}
+            className={cx(classes.main, className)} 
+            onClick={action}
+            type={type}
         >
-            {props.text}
+            {text}
         </Button>
     )
 }

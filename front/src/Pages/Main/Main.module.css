@@ -134,16 +134,77 @@
 .services {
     background-image: url("../../Assets/images/services_bg.svg");
     width: 100%;
-    background-position-y: bottom;
+    height: 100vh;
+    background-position: bottom;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .servicesContainer {
-    width: 80%;
+    width: 100%;
     overflow-x: hidden;
+    height: 100%;
 }
+
+/* DOUBLE BLOCK */
+
+.doubleBlock {
+    width: 100%;
+    display: flex;
+}
+.doubleSide {
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.itemsWrapper {
+    padding: 0 10%;
+    z-index: 2;
+}
+.lookAll {
+    box-shadow: none;
+    margin-top: 33px;
+    margin-bottom: 67px;
+}
+.doubleSide h2 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-block-end: 45px;
+    margin-block-start: 90px;
+}
+
+/* NEWS */
+.news {
+    background-color: #E4E4E4;
+}
+.news h2 {
+    color: #FC5E08;
+}
+.newsLines {
+    position: absolute;
+    top: 45%;
+}
+
+
+/* RELEASES */
+.releases {
+    background-color: #474444;
+}
+.releases h2 {
+    color: white;
+}
+.releasesLines {
+    position: absolute;
+    top: 30%;
+    left: -35px;
+}
+
 
 @media screen and (max-width: 1500px) {
     .merities {

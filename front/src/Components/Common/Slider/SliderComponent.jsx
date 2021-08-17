@@ -11,7 +11,11 @@ const SliderComponent = (props) => {
         infinite: true,
         centerPadding: "60px",
         slidesToShow: 3,
-        speed: 500
+        speed: 500,
+        adaptiveHeight: true,
+        arrows: true,
+        dots: true,
+        // dotsClass: classes.dots
     };
 
     return(
