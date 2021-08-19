@@ -19,13 +19,15 @@ import CustomButton from '../../Components/UI/Button/Button'
 import ReleaseItem from '../../Components/Releases/ReleaseItem/ReleaseItem'
 
 const Main = (props) => {
+    const { viewAllNews, viewAllReleases } = props
+
     const { t } = useTranslation()
 
     const merities = useMerities()
 
     useEffect(() => {
         Aos.init({ duration: 1000 })
-    }, []);
+    }, [])
 
 
     const news = [
@@ -39,7 +41,38 @@ const Main = (props) => {
     ]
 
     const music = [ 
-        { _id: "vcb" }
+        { 
+            _id: "vcb",
+            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
+            name: "Sehnsuht",
+            artist: "Rammstein",
+            genre: "Rock",
+            year_of_release: 1997
+        },
+        { 
+            _id: "vdfscb",
+            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
+            name: "Sehnsuht",
+            artist: "Rammstein",
+            genre: "Rock",
+            year_of_release: 1997
+        },
+        { 
+            _id: "vfghfcb",
+            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
+            name: "Sehnsuht",
+            artist: "Rammstein",
+            genre: "Rock",
+            year_of_release: 1997
+        },
+        { 
+            _id: "vc3453b",
+            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
+            name: "Sehnsuht",
+            artist: "Rammstein",
+            genre: "Rock",
+            year_of_release: 1997
+        }
     ]
 
     const services = [
@@ -86,16 +119,17 @@ const Main = (props) => {
                     <img src={news_lines} alt="lines" className={classes.newsLines}/>
                     <h2>{t("news.title")}</h2>
                     <div className={classes.itemsWrapper}>
-                        {news.slice(0, 3).map(item => <NewsItem item={item}/>)}
+                        {news.slice(0, 3).map(item => <NewsItem item={item} key={item._id}/>)}
                     </div>
-                    <CustomButton text={t("actions.all")} className={classes.lookAll}/>
+                    <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllNews}/>
                 </div>
                 <div className={cx(classes.doubleSide, classes.releases)}>
                     <img src={releases_lines} alt="lines" className={classes.releasesLines}/>
                     <h2>{t("releases.title")}</h2>
                     <div className={classes.itemsWrapper}>
-                        {music.slice(0, 3).map(item => <ReleaseItem/>)}
+                        {music.slice(0, 3).map(item => <ReleaseItem item={item} key={item._id}/>)}
                     </div>
+                    <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllReleases}/>
                 </div>
             </div>
         </div>

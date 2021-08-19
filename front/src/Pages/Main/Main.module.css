@@ -161,13 +161,17 @@
     align-items: center;
 }
 .itemsWrapper {
+    box-sizing: border-box;
+    width: 100%;
     padding: 0 10%;
     z-index: 2;
 }
 .lookAll {
     box-shadow: none;
-    margin-top: 33px;
-    margin-bottom: 67px;
+    margin-top: 80px !important;
+    margin-bottom: 67px !important;
+    padding: 15px;
+    box-sizing: border-box;
 }
 .doubleSide h2 {
     font-weight: 500;
@@ -201,7 +205,7 @@
 }
 .releasesLines {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: -35px;
 }
 
