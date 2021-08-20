@@ -14,9 +14,15 @@ import { cx } from '../../Utils/classnames'
 
 import news_lines from '../../Assets/images/news_lines.svg'
 import releases_lines from '../../Assets/images/release_lines.svg'
+import vinyl from '../../Assets/icons/vinyl.svg'
+import coma from '../../Assets/images/coma.svg'
+import about1 from '../../Assets/images/about1.jpg';
+
 import NewsItem from '../../Components/News/NewsItem/NewsItem'
 import CustomButton from '../../Components/UI/Button/Button'
 import ReleaseItem from '../../Components/Releases/ReleaseItem/ReleaseItem'
+import ReviewItem from '../../Components/Reviews/ReviewItem/ReviewItem'
+import Slider from 'react-slick'
 
 const Main = (props) => {
     const { viewAllNews, viewAllReleases } = props
@@ -83,6 +89,27 @@ const Main = (props) => {
         { _id: "127", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
     ]
 
+    const reviews = [
+        { _id: "gdfghfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdffghhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdfdfghg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdfhfghg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdfashg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdfsdfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdfhagg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+        { _id: "gdfasdfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
+    ]
+
+    const about = [about1, about1, about1, about1, about1]
+
+    const settings = {
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        arrow: true,
+        slidesToShow: 3,
+    }
+
     return(
         <div className={classes.main}>
             <div className={classes.home}>
@@ -127,9 +154,29 @@ const Main = (props) => {
                     <img src={releases_lines} alt="lines" className={classes.releasesLines}/>
                     <h2>{t("releases.title")}</h2>
                     <div className={classes.itemsWrapper}>
-                        {music.slice(0, 3).map(item => <ReleaseItem item={item} key={item._id}/>)}
+                        {music.slice(0, 3).map(item => 
+                            <div className={classes.itemContainer}>
+                                <img src={vinyl} alt="vinyl" className={classes.vinyl}/>
+                                <ReleaseItem item={item} key={item._id}/>
+                            </div>)}
                     </div>
                     <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllReleases}/>
+                </div>
+            </div>
+            <div className={classes.reviews}>
+                <h2>{t("reviews.title")}</h2>
+                <img src={coma} alt="coma" className={classes.coma}/>
+                <div className={classes.reviewsWrapper}>
+                    {reviews.map(item => <ReviewItem item={item} key={item._id}/>)}
+                </div>
+                <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/>
+            </div>
+            <div className={classes.about}>
+                <h2>{t("about.title")}</h2>
+                <div className={classes.aboutSliderContainer}>
+                    <Slider {...settings} className={classes.sliderAbout}>
+                        {about.map(item => <img src={item} alt="studio_photo"/>)}
+                    </Slider>
                 </div>
             </div>
         </div>
