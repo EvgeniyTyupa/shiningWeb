@@ -105,6 +105,7 @@ const Main = (props) => {
     const settings = {
         dots: true,
         autoplay: true,
+        centerMode: true,
         autoplaySpeed: 10000,
         arrow: true,
         slidesToShow: 3,
@@ -177,6 +178,17 @@ const Main = (props) => {
                     <Slider {...settings} className={classes.sliderAbout}>
                         {about.map(item => <img src={item} alt="studio_photo"/>)}
                     </Slider>
+                </div>
+                <p className={classes.aboutText}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed urna massa. Maecenas vel risus sagittis, placerat dolor vitae, interdum nibh. Aenean vestibulum eleifend sapien, quis rhoncus nulla euismod ac. Sed vel ipsum in mauris viverra placerat. Morbi tempus bibendum tortor, vel rutrum felis elementum id. Sed a nulla consequat, posuere justo vitae, rhoncus nisl. Curabitur rutrum pulvinar diam in venenatis.
+                    <br/><br/>
+                    Sed eget diam in dolor elementum molestie pharetra rhoncus nisl. Morbi sagittis venenatis purus non laoreet. Praesent interdum ipsum vel eros facilisis, sed gravida est faucibus. Maecenas porttitor mauris eget enim interdum, at vulputate augue ullamcorper. Morbi rutrum magna neque, a sollicitudin neque efficitur id. Phasellus eget magna vel ligula dignissim sollicitudin a vitae leo. Phasellus imperdiet enim vitae est pharetra, non elementum dui vulputate. Quisque vehicula enim sit amet elit ornare, a interdum ipsum consectetur. Integer viverra auctor ultrices. Cras odio orci, ullamcorper sed fringilla egestas, malesuada a mauris. Vivamus ut congue tellus. In posuere varius orci pretium posuere. Etiam sit amet lectus sed leo cursus mollis et vitae turpis. Etiam lorem ligula, volutpat euismod ante at, venenatis varius nulla. Maecenas blandit, elit ac interdum facilisis, metus ante lacinia nunc, at vehicula nibh erat in augue. Proin tempus enim quis risus imperdiet, pharetra euismod leo mollis.
+                </p>
+            </div>
+            <div className={classes.order}>
+                <h3>{t("order.title")}</h3>
+                <div className={classes.orderContainer} data-aos="fade-up" data-aos-duration="1500">
+                    <OrderForm/>
                 </div>
             </div>
         </div>

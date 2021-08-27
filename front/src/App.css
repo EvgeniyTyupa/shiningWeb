@@ -31,6 +31,7 @@ body {
   transition-duration: .6s;
   transform: scale(1) translateY(110px);
   opacity: 1;
+  filter: blur(0px);
 }
 .slick-dots li.slick-active button:before {
   color: #FC5E08 !important;

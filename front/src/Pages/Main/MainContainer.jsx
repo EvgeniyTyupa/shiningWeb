@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { useEventListener } from "../../Hooks/useEventListener"
 import Main from "./Main"
 
 const MainContainer = (props) => {
@@ -13,7 +15,10 @@ const MainContainer = (props) => {
     }
 
     return(
-        <Main viewAllNews={viewAllNews} viewAllReleases={viewAllReleases}/>
+        <Main 
+            viewAllNews={viewAllNews} 
+            viewAllReleases={viewAllReleases}
+        />
     )
 }
 
