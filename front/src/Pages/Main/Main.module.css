@@ -345,6 +345,9 @@
     padding-bottom: 30px;
     overflow-y: hidden;
 }
+.order div {
+    margin-left: 0;
+}
 
 .order h3 {
     font-style: normal;
@@ -357,6 +360,27 @@
     text-transform: uppercase;
     color: white;
     margin-block-end: 50px;
+}
+
+/* PARTNERS */
+
+.partners {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.partners h2 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-block-end: 65px;
+    margin-block-start: 45px;
+    text-align: center;
+    color: #474444;
 }
 
 @media screen and (max-width: 1500px) {

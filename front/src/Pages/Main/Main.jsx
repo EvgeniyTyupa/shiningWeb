@@ -191,6 +191,10 @@ const Main = (props) => {
                     <OrderForm/>
                 </div>
             </div>
+            <div className={classes.partners}>
+                <h2>{t("partners.title")}</h2>
+                
+            </div>
         </div>
     )
 }
