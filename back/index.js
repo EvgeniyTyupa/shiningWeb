@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
 
+const mailRoute = require('./routes/mail')
+
+app.use('/api/mail', mailRoute)
+
 async function start() {
     try {
         await mongoose.connect(process.env.MONGO_URI, {

@@ -38,18 +38,7 @@
     text-decoration: underline;
 }
 
-.socialItems {
-    display: flex;
-    align-items: center;
-    z-index: 1;
-}
-.socialItems a {
-    margin-right: 15px;
-    transition-duration: .3s;
-}
-.socialItems a:hover {
-    transform: scale(1.05);
-}
+
 .bot {
     display: flex;
     justify-content: space-between;

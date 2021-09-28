@@ -1,0 +1,13 @@
+.socialItems {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.socialItems a {
+    margin-right: 15px;
+    transition-duration: .3s;
+    color: white;
+}
+.socialItems a:hover {
+    transform: scale(1.05);
+}

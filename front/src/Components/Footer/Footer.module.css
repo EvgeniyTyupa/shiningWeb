@@ -1,0 +1,51 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.links {
+   width: fit-content;
+}
+.side {
+    width: 40%;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.info > div {
+    margin: 7px 0;
+}
+.field {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.field svg {
+    margin-right: 4px;
+}
+.field a {
+    text-decoration: none;
+    color: white;
+}
+.field a:hover {
+    text-decoration: underline;
+}
+.bot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #4E4E4E;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 15px 0;
+}

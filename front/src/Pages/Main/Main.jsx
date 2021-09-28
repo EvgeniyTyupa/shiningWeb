@@ -16,13 +16,14 @@ import news_lines from '../../Assets/images/news_lines.svg'
 import releases_lines from '../../Assets/images/release_lines.svg'
 import vinyl from '../../Assets/icons/vinyl.svg'
 import coma from '../../Assets/images/coma.svg'
-import about1 from '../../Assets/images/about1.jpg';
+import about1 from '../../Assets/images/about1.jpg'
 
 import NewsItem from '../../Components/News/NewsItem/NewsItem'
 import CustomButton from '../../Components/UI/Button/Button'
 import ReleaseItem from '../../Components/Releases/ReleaseItem/ReleaseItem'
 import ReviewItem from '../../Components/Reviews/ReviewItem/ReviewItem'
 import Slider from 'react-slick'
+import { usePartners } from '../../Hooks/usePartners'
 
 const Main = (props) => {
     const { viewAllNews, viewAllReleases } = props
@@ -101,6 +102,8 @@ const Main = (props) => {
     ]
 
     const about = [about1, about1, about1, about1, about1]
+
+    const partners = usePartners()
 
     const settings = {
         dots: true,
@@ -193,7 +196,14 @@ const Main = (props) => {
             </div>
             <div className={classes.partners}>
                 <h2>{t("partners.title")}</h2>
-                
+                <div className={classes.partnersSliderContainer}>
+                    <Slider {...settings} dots={false}>
+                        {partners.map(item => <img src={item.img} key={item.id} alt="partner" className={classes.partner}/>)}
+                    </Slider>
+                </div>
+            </div>
+            <div className={classes.map}>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10705.115485554334!2d35.05555530661709!3d47.87292777408983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc640f5e5b36c3%3A0x637afc1845c25c28!2z0KHRgtGD0LTRltGPINC30LLRg9C60L7Qt9Cw0L_QuNGB0YMgU2hpbmluZyBNdXNpYw!5e0!3m2!1sru!2sua!4v1631712606516!5m2!1sru!2sua" allowFullScreen="" loading="lazy"></iframe>
             </div>
         </div>
     )

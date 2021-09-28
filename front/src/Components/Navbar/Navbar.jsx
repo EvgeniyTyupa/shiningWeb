@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from 'react-router-dom';
 import logo from '../../Assets/icons/logo.svg'
 import { cx } from '../../Utils/classnames';
+import Social from '../Social/Social';
 
 
 const useStyles = makeStyles({
@@ -47,8 +48,6 @@ const Navbar = (props) => {
 
     const material = useStyles()
 
-    const socialItems = useSocialItems()
-
     const handleLanguage = (event) => {
         i18n.changeLanguage(event.target.value)
     }
@@ -63,15 +62,7 @@ const Navbar = (props) => {
                     </a>
                 </div>
                 <div className={classes.side}>
-                    <div className={classes.socialItems}>
-                        {socialItems.map((item, index) => (
-                            <div className={classes.socialItem} key={`menu${index}`}>
-                                <a href={item.href} rel="noopener noreferrer" target="_blank">
-                                    {item.icon}
-                                </a>
-                            </div>
-                        ))}
-                    </div>
+                    <Social/>
                     <TextField classes={material} select onChange={handleLanguage} defaultValue="ru">
                         <MenuItem value="ru">RU</MenuItem>
                         <MenuItem value="ua">UA</MenuItem>

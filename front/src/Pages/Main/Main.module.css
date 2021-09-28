@@ -366,21 +366,63 @@
 
 .partners {
     width: 100%;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: white;   
+    background-image: url('../../Assets/images/client_bg.jpg');
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .partners h2 {
     font-weight: 500;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 44px;
+    line-height: 30px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-block-end: 65px;
-    margin-block-start: 45px;
+    margin-block-start: 3%;
     text-align: center;
-    color: #474444;
+    color: #FC5E08;
+    z-index: 1;
+}
+.partnersSliderContainer {
+    margin-top: auto;
+    margin-bottom: 0%;
+    width: 50%;
+    height: 26vh;
+    position: relative;
+    left: -15px;
+    top: 10px;
+}
+/* .partnersSliderContainer div {
+    height: fit-content;
+} */
+.partner {
+    width: 100px !important;
+    filter: grayscale(1);
+    transition-duration: .3s;
+}
+.partnersSliderContainer > div > div > div > div {
+    opacity: 1 !important;
+}
+
+.partnersSliderContainer > div > div > div {
+    height: fit-content;
+}
+
+/* MAP */
+
+.map {
+    width: 100%;
+}
+.map iframe {
+    width: 100%;
+    height: 450px;
+    border: 0
 }
 
 @media screen and (max-width: 1500px) {
