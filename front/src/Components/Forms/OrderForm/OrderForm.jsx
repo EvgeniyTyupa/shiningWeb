@@ -6,6 +6,9 @@ import { makeStyles, TextField } from '@material-ui/core';
 import Messengers from '../../UI/Social/Messengers/Messengers';
 import CustomButton from '../../UI/Button/Button';
 import { cx } from '../../../Utils/classnames';
+import { connect } from 'react-redux';
+import { sendMail } from '../../../Redux/commonReducer';
+
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -128,4 +131,6 @@ const OrderForm = (props) => {
     )
 }
 
-export default OrderForm 
+export default connect(null, {
+    sendMail
+})(OrderForm) 
