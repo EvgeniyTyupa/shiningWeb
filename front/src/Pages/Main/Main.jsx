@@ -179,7 +179,7 @@ const Main = (props) => {
                 <h2>{t("about.title")}</h2>
                 <div className={classes.aboutSliderContainer}>
                     <Slider {...settings} className={classes.sliderAbout}>
-                        {about.map(item => <img src={item} alt="studio_photo"/>)}
+                        {about.map(item => <img src={item} alt="studio_photo" key=""/>)}
                     </Slider>
                 </div>
                 <p className={classes.aboutText}>

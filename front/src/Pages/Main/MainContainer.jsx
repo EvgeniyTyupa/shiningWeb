@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react"
+import { connect } from "react-redux"
 import { useHistory } from "react-router-dom"
-import { useEventListener } from "../../Hooks/useEventListener"
+import Preloader from "../../Components/Common/Preloader/Preloader"
 import Main from "./Main"
 
 const MainContainer = (props) => {
+    const { isFetching } = props
+
     const history = useHistory()
 
     const viewAllNews = () => {
@@ -15,11 +17,18 @@ const MainContainer = (props) => {
     }
 
     return(
-        <Main 
-            viewAllNews={viewAllNews} 
-            viewAllReleases={viewAllReleases}
-        />
+        <>
+            {isFetching && <Preloader/>}
+            <Main 
+                viewAllNews={viewAllNews} 
+                viewAllReleases={viewAllReleases}
+            />
+        </>
     )
 }
 
-export default MainContainer
+let mapStateToProps = (state) => ({
+    isFetching: state.common.isFetching
+})
+
+export default connect(mapStateToProps, {})(MainContainer)

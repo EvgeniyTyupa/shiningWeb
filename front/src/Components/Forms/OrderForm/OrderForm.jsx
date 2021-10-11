@@ -63,13 +63,25 @@ const useStyles = makeStyles((theme) => ({
 const OrderForm = (props) => {
     const { handleSubmit, control, reset } = useForm()
 
+    const { sendMail } = props
+
     const { t } = useTranslation()
 
     const material = useStyles()
 
+    const onSubmit = (data, e) => {
+        e.preventDefault()
+        const { name, phone } = data
+        sendMail(name, phone)
+        reset({
+            name: "",
+            phone: ""
+        })
+    }
+
     return(
         <div className={classes.main}>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={classes.field}>
                     <Controller
                         name="name"

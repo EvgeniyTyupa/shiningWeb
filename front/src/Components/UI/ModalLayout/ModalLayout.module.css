@@ -1,0 +1,14 @@
+.main {
+    background-color: #474444;
+    border-radius: 4px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.main svg {
+    color: white
+}
