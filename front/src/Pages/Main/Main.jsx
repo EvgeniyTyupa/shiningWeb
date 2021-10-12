@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import classes from './Main.module.css'
 import micropone from '../../Assets/images/micro.svg'
 import slogan from '../../Assets/images/slogan.svg'
@@ -24,6 +24,7 @@ import ReleaseItem from '../../Components/Releases/ReleaseItem/ReleaseItem'
 import ReviewItem from '../../Components/Reviews/ReviewItem/ReviewItem'
 import Slider from 'react-slick'
 import { usePartners } from '../../Hooks/usePartners'
+import Spy from '../../Components/Spy/Spy'
 
 const Main = (props) => {
     const { viewAllNews, viewAllReleases, currentTrack, setCurrentTrack } = props
@@ -36,6 +37,16 @@ const Main = (props) => {
         Aos.init({ duration: 1000 })
     }, [])
 
+    const homeRef = useRef()
+    const previlegiesRef = useRef()
+    const servicesRef = useRef()
+    const itemsRef = useRef()
+    const commentsRef = useRef()
+    const aboutRef = useRef()
+    const orderRef = useRef()
+    const clientsRef = useRef()
+
+    let refArray = [homeRef, previlegiesRef, servicesRef, itemsRef, commentsRef, aboutRef, orderRef, clientsRef]
 
     const news = [
         { _id: "cvf", date: "19.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
@@ -116,14 +127,15 @@ const Main = (props) => {
 
     return(
         <div className={classes.main}>
-            <div className={classes.home}>
+            <Spy refs={refArray}/>
+            <div className={classes.home} ref={homeRef}>
                 <img src={micropone} data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" alt="micro" className={classes.micro}/>
                 <img src={slogan} data-aos="fade-down" data-aos-duration="1500" data-aos-delay="300" alt="slogan" className={classes.slogan}/>
                 <div className={classes.orderContainer} data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1500">
                     <OrderForm/>
                 </div>
             </div>
-            <div className={classes.we}>
+            <div className={classes.we} ref={previlegiesRef}>
                 <div className={classes.weTitleContainer}>
                     <h2>{t("home.we.title")}</h2>
                     <p>{t("home.we.studio")} <strong>Shining Music</strong> - {t("home.we.one")}</p>
@@ -140,12 +152,12 @@ const Main = (props) => {
                     ))}
                 </div>
             </div>
-            <div className={classes.services}>
+            <div className={classes.services} ref={servicesRef}>
                 <div className={classes.servicesContainer}>
                     <SliderComponent items={services}/>
                 </div>
             </div>
-            <div className={classes.doubleBlock}>
+            <div className={classes.doubleBlock} ref={itemsRef}>
                 <div className={cx(classes.doubleSide, classes.news)}>
                     <img src={news_lines} alt="lines" className={classes.newsLines}/>
                     <h2>{t("news.title")}</h2>
@@ -167,7 +179,7 @@ const Main = (props) => {
                     <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllReleases}/>
                 </div>
             </div>
-            <div className={classes.reviews}>
+            <div className={classes.reviews} ref={commentsRef}>
                 <h2>{t("reviews.title")}</h2>
                 <img src={coma} alt="coma" className={classes.coma}/>
                 <div className={classes.reviewsWrapper}>
@@ -175,7 +187,7 @@ const Main = (props) => {
                 </div>
                 <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/>
             </div>
-            <div className={classes.about}>
+            <div className={classes.about} ref={aboutRef}>
                 <h2>{t("about.title")}</h2>
                 <div className={classes.aboutSliderContainer}>
                     <Slider {...settings} className={classes.sliderAbout}>
@@ -188,13 +200,13 @@ const Main = (props) => {
                     Sed eget diam in dolor elementum molestie pharetra rhoncus nisl. Morbi sagittis venenatis purus non laoreet. Praesent interdum ipsum vel eros facilisis, sed gravida est faucibus. Maecenas porttitor mauris eget enim interdum, at vulputate augue ullamcorper. Morbi rutrum magna neque, a sollicitudin neque efficitur id. Phasellus eget magna vel ligula dignissim sollicitudin a vitae leo. Phasellus imperdiet enim vitae est pharetra, non elementum dui vulputate. Quisque vehicula enim sit amet elit ornare, a interdum ipsum consectetur. Integer viverra auctor ultrices. Cras odio orci, ullamcorper sed fringilla egestas, malesuada a mauris. Vivamus ut congue tellus. In posuere varius orci pretium posuere. Etiam sit amet lectus sed leo cursus mollis et vitae turpis. Etiam lorem ligula, volutpat euismod ante at, venenatis varius nulla. Maecenas blandit, elit ac interdum facilisis, metus ante lacinia nunc, at vehicula nibh erat in augue. Proin tempus enim quis risus imperdiet, pharetra euismod leo mollis.
                 </p>
             </div>
-            <div className={classes.order}>
+            <div className={classes.order} ref={orderRef}>
                 <h3>{t("order.title")}</h3>
                 <div className={classes.orderContainer} data-aos="fade-up" data-aos-duration="1500">
                     <OrderForm/>
                 </div>
             </div>
-            <div className={classes.partners}>
+            <div className={classes.partners} ref={clientsRef}>
                 <h2>{t("partners.title")}</h2>
                 <div className={classes.partnersSliderContainer}>
                     <Slider {...settings} dots={false}>
