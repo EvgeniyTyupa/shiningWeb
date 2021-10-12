@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { connect } from "react-redux"
 import { useHistory } from "react-router-dom"
 import Preloader from "../../Components/Common/Preloader/Preloader"
@@ -5,6 +6,8 @@ import Main from "./Main"
 
 const MainContainer = (props) => {
     const { isFetching } = props
+
+    const [currentTrack, setCurrentTrack] = useState(null)
 
     const history = useHistory()
 
@@ -22,6 +25,8 @@ const MainContainer = (props) => {
             <Main 
                 viewAllNews={viewAllNews} 
                 viewAllReleases={viewAllReleases}
+                currentTrack={currentTrack}
+                setCurrentTrack={setCurrentTrack}
             />
         </>
     )

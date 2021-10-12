@@ -31,6 +31,7 @@
     margin-left: 17px;
     display: flex;
     flex-direction: column;
+    width: 78%;
 }
 .info h4 {
     margin-block-end: 0;
@@ -55,4 +56,16 @@
     line-height: 15px;
     text-transform: capitalize;
     color: #AAA9A9;
+}
+.player {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+}
+.player span {
+    font-family: 'Montserrat';
+    font-size: 11px;
+    color: #FC5E08;
+    margin-left: auto;
 }

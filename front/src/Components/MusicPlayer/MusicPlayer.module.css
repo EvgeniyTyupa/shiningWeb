@@ -1,0 +1,62 @@
+.main {
+    width: 100%;
+    position: relative;
+    --progress-bar-height: 5px;
+    --thumb-width: 15px;
+    --thumb-height: 15px;
+}
+.main::before {
+    content: '';
+    background-color: #616161;
+    width: 99%;
+    height: 5px;
+    display: block;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.range {
+    -webkit-appearance: none;
+    background-color: #616161;
+    height: 5px;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+    margin: 0 auto;
+}
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #FC5E08;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+.progressBar {
+    background: #FC5E08;
+    height: 5px;
+    width: 0%;
+    display: block;
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+}
+.thumb {
+    width: 15px;
+    height: 15px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.753);
+    z-index: 3;
+    background: #FC5E08;
+    position: absolute;
+    border-radius: 50%;
+    top: 65%;
+    transform: translate(0%, -50%);
+    pointer-events: none; /* Remove pointer events on thumb so user can click on the actual thumb beaneath it!  */
+    user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
+  }

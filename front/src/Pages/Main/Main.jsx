@@ -26,7 +26,7 @@ import Slider from 'react-slick'
 import { usePartners } from '../../Hooks/usePartners'
 
 const Main = (props) => {
-    const { viewAllNews, viewAllReleases } = props
+    const { viewAllNews, viewAllReleases, currentTrack, setCurrentTrack } = props
 
     const { t } = useTranslation()
 
@@ -158,10 +158,10 @@ const Main = (props) => {
                     <img src={releases_lines} alt="lines" className={classes.releasesLines}/>
                     <h2>{t("releases.title")}</h2>
                     <div className={classes.itemsWrapper}>
-                        {music.slice(0, 3).map(item => 
+                        {music.slice(0, 3).map((item, index) => 
                             <div className={classes.itemContainer}>
-                                <img src={vinyl} alt="vinyl" className={classes.vinyl}/>
-                                <ReleaseItem item={item} key={item._id}/>
+                                <img src={vinyl} alt="vinyl" className={cx(classes.vinyl, currentTrack === index && classes.activeVinyl)}/>
+                                <ReleaseItem item={item} key={item._id} index={index} setCurrentTrack={setCurrentTrack} currentTrack={currentTrack}/>
                             </div>)}
                     </div>
                     <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllReleases}/>
