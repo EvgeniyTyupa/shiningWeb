@@ -3,7 +3,7 @@ import { cx } from '../../Utils/classnames'
 import classes from './Spy.module.css'
 
 const Spy = (props) => {
-    const { refs } = props
+    const { refs, className } = props
 
     const [currentRef, setCurrentRef] = useState(0)
 
@@ -13,7 +13,7 @@ const Spy = (props) => {
     }
 
     return(
-        <div className={classes.main}>
+        <div className={cx(classes.main, className)}>
             {refs.map((item, index) => (
                 <button onClick={() => handleScroll(item, index)}>
                     <div className={cx(classes.body, currentRef === index && classes.active)}/>

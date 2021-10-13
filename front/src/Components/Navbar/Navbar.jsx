@@ -9,6 +9,9 @@ import logo from '../../Assets/icons/logo.svg'
 import { cx } from '../../Utils/classnames';
 import Social from '../Social/Social';
 
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 
 const useStyles = makeStyles({
     root: {
@@ -52,8 +55,12 @@ const Navbar = (props) => {
         i18n.changeLanguage(event.target.value)
     }
 
+    useEffect(() => {
+        Aos.init({ duration: 500 })
+    }, [])
+
     return(
-        <nav className={classes.main}>
+        <nav className={classes.main} data-aos="fade-down">
             <div className={classes.top}>
                 <div className={classes.side}>
                     <a href="tel:+380507654321">

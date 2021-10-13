@@ -7,6 +7,10 @@
 
 /* HOME */
 
+.spy {
+    top: 25%;
+}
+
 .home {
     height: 100vh;
     display: flex;
@@ -278,6 +282,7 @@
     justify-content: space-between;
     gap: 100px;
     padding: 0 10px;
+    cursor: move;
 }
 
 .reviewsWrapper::-webkit-scrollbar {

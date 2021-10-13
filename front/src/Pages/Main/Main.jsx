@@ -25,6 +25,7 @@ import ReviewItem from '../../Components/Reviews/ReviewItem/ReviewItem'
 import Slider from 'react-slick'
 import { usePartners } from '../../Hooks/usePartners'
 import Spy from '../../Components/Spy/Spy'
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 const Main = (props) => {
     const { viewAllNews, viewAllReleases, currentTrack, setCurrentTrack } = props
@@ -127,7 +128,7 @@ const Main = (props) => {
 
     return(
         <div className={classes.main}>
-            <Spy refs={refArray}/>
+            <Spy refs={refArray} className={classes.spy}/>
             <div className={classes.home} ref={homeRef}>
                 <img src={micropone} data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" alt="micro" className={classes.micro}/>
                 <img src={slogan} data-aos="fade-down" data-aos-duration="1500" data-aos-delay="300" alt="slogan" className={classes.slogan}/>
@@ -182,9 +183,9 @@ const Main = (props) => {
             <div className={classes.reviews} ref={commentsRef}>
                 <h2>{t("reviews.title")}</h2>
                 <img src={coma} alt="coma" className={classes.coma}/>
-                <div className={classes.reviewsWrapper}>
+                <ScrollContainer className={classes.reviewsWrapper} hideScrollbars={false} horizontal vertical={false}>
                     {reviews.map(item => <ReviewItem item={item} key={item._id}/>)}
-                </div>
+                </ScrollContainer>
                 <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/>
             </div>
             <div className={classes.about} ref={aboutRef}>
