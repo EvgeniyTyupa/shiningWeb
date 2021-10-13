@@ -1,8 +1,7 @@
 import { connect } from "react-redux"
 import { me } from "../../../Redux/adminReducer"
-
-const { useEffect } = require("react")
-const { Redirect } = require("react-router-dom")
+import { useEffect } from "react"
+import { Redirect } from "react-router-dom"
 
 const ProtectedRoute = ({ Component, isAuth, isStartData, me}) => {
     useEffect(() => {

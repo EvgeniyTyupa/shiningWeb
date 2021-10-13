@@ -23,8 +23,8 @@ export const authApi = {
         return instance.post('/admin/register', { username, password })
         .then(response => response.data)
     },
-    login(username, passwrod){
-        return instance.post('/admin/login', { username, passwrod })
+    login(username, password){
+        return instance.post('/admin/login', { username, password })
         .then(response => response.data)
     },
     authMe(){

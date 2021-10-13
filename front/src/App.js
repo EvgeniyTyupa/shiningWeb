@@ -31,7 +31,7 @@ const App = (props) => {
             <Route path="/" exact render={() => <MainContainer/>}/>
 
             <Route path="/login" render={() => <LoginContainer/>}/>
-            <Route path="/admin" exact render={() => <ProtectedRoute Component={<DashboardContainer/>}/>}/>
+            <Route path="/admin" exact render={() => <ProtectedRoute Component={DashboardContainer}/>}/>
           </Switch>
         </div>
         {!isAdmin && <Footer/>}

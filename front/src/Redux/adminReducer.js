@@ -51,7 +51,7 @@ export const login = (username, password) => async (dispatch) => {
     dispatch(setIsFetching(true))
     try{
         let response = await authApi.login(username, password)
-        localStorage.usertoken = response
+        localStorage.usertoken = response.token
         dispatch([setServerError(null), setIsAuth(true), setIsFetching(false)])
     }catch(err) {
         dispatch([setServerError(err.message), setIsAuth(false), setIsFetching(false)])
@@ -61,7 +61,7 @@ export const login = (username, password) => async (dispatch) => {
 export const me = () => async (dispatch) => {
     dispatch(setIsFetching(true))
     try{
-        let response = await authApi.me()
+        let response = await authApi.authMe()
         dispatch([setAdminData(response), setIsAuth(true), setIsStartData(true), setIsFetching(false)])
     }catch(err) {
         dispatch([setServerError(err.message), setIsFetching(false)])
