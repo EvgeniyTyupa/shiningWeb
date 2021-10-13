@@ -5,19 +5,36 @@ import MainContainer from './Pages/Main/MainContainer';
 import Footer from './Components/Footer/Footer';
 import { connect } from 'react-redux';
 import MailSuccess from './Components/Modals/MailSuccess/MailSuccess';
+import ProtectedRoute from './Components/Common/ProtectedRoute/ProtectedRoute';
+import DashboardContainer from './Pages/Admin/Dashboard/DashboardContainer';
+import { useEffect, useState } from 'react';
+import LoginContainer from './Pages/Admin/Login/LoginContainer';
 
 const App = (props) => {
+  const [isAdmin, setIsAdmin] = useState(false)
+
+  useEffect(() => {
+    if(!window.location.pathname.includes("admin") && !window.location.pathname.includes("login")) {
+      setIsAdmin(false)
+    }else {
+      setIsAdmin(true)
+    }
+  }, [window.location.pathname])
+
   return(
     <BrowserRouter>
       <div className="main">
-        <Navbar/>
+        {!isAdmin && <Navbar/>}
         <div className="content">
           {props.isMailSended && <MailSuccess/>}
           <Switch>
             <Route path="/" exact render={() => <MainContainer/>}/>
+
+            <Route path="/login" render={() => <LoginContainer/>}/>
+            <Route path="/admin" exact render={() => <ProtectedRoute Component={<DashboardContainer/>}/>}/>
           </Switch>
         </div>
-        <Footer/>
+        {!isAdmin && <Footer/>}
       </div>
     </BrowserRouter>
   )

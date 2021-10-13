@@ -1,14 +1,12 @@
 import {createStore, combineReducers, applyMiddleware, compose} from "redux";
 import multi from 'redux-multi';
 import thunkMiddlware from 'redux-thunk';
+import adminReducer from "./adminReducer";
 import commonReducer from "./commonReducer";
 
 let reducers = combineReducers({
-    // djs: djsReducer,
     common: commonReducer,
-    // youtube: youtubeReducer,
-    // user: userReducer,
-    // ticket: ticketReducer
+    admin: adminReducer
 });
 
 

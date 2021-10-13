@@ -10,7 +10,7 @@ let initialState = {
     serverError: null
 }
 
-const commonReducer = (state = initialState, action ) => {
+const commonReducer = (state = initialState, action) => {
     switch(action.type){
         case SET_IS_FETCHING: {
             return { ...state, isFetching: action.isFetching }
