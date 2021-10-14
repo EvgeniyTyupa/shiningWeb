@@ -1,4 +1,3 @@
-import PersonIcon from '@mui/icons-material/Person';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';

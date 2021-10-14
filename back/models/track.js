@@ -18,7 +18,12 @@ const TrackSchema = mongoose.Schema({
         required: true
     },
     image: {
-        type: String
+        type: String,
+        required: true
+    },
+    path: {
+        type: String,
+        required: true
     }
 })
 
