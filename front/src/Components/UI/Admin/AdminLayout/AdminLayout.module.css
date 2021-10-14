@@ -6,3 +6,7 @@
 .sidebar {
     width: 15%;
 }
+.content {
+    width: 100%;
+    margin-left: 1rem;
+}

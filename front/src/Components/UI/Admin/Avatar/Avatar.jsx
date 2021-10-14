@@ -10,7 +10,7 @@ const Avatar = (props) => {
             <div className={cx(classes.circle, avatarClassName)}>
                 <PersonIcon/>
             </div>
-            <span>{username}</span>
+            <span>{username}</span> 
         </div>
     )
 }

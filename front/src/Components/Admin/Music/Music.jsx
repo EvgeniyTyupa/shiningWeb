@@ -1,10 +1,11 @@
+import TabLayout from '../../UI/Admin/TabLayout/TabLayout'
 import classes from './Music.module.css'
 
 const Music = (props) => {
     return(
-        <div className={classes.main}>
-            Music
-        </div>
+        <TabLayout header="Music">
+            
+        </TabLayout>
     )
 }
 

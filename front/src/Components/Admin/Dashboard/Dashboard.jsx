@@ -1,9 +1,10 @@
+import TabLayout from "../../UI/Admin/TabLayout/TabLayout"
 
 const Dashboard = (props) => {
     return(
-        <div>
-            Dashboard
-        </div>
+        <TabLayout header="Dashboard">
+            <p>content</p>
+        </TabLayout>
     )
 }
 

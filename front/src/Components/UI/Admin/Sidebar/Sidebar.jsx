@@ -5,7 +5,7 @@ import Styled from 'styled-components'
 import { useState } from 'react'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Button, IconButton } from '@mui/material'
+import { Button } from '@mui/material'
 
 const Sidebar = (props) => {
     const items = useSidebarItems()
@@ -29,7 +29,7 @@ const Sidebar = (props) => {
     return(
         <Main className={classes.main} width={isCollapse ? 5 : 13} isCollapse={isCollapse}>
             <div className={classes.header}>
-                <Avatar username={username}/>
+                <Avatar username={isCollapse ? "" : username}/>
             </div>
             <div className={classes.itemsWrapper}>
                 {items.map((item, index) => (
