@@ -68,7 +68,8 @@ export const me = () => async (dispatch) => {
     }
 }
 
-export const logout = () => {
+export const logout = () => (dispatch) => {
+    dispatch([setIsAuth(false), setAdminData(null), setIsStartData(false)])
     localStorage.removeItem("usertoken")
 }
 

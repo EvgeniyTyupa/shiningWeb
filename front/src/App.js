@@ -6,9 +6,9 @@ import Footer from './Components/Footer/Footer';
 import { connect } from 'react-redux';
 import MailSuccess from './Components/Modals/MailSuccess/MailSuccess';
 import ProtectedRoute from './Components/Common/ProtectedRoute/ProtectedRoute';
-import DashboardContainer from './Pages/Admin/Dashboard/DashboardContainer';
 import { useEffect, useState } from 'react';
 import LoginContainer from './Pages/Admin/Login/LoginContainer';
+import Admin from './Pages/Admin/Admin/Admin';
 
 const App = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
@@ -31,7 +31,7 @@ const App = (props) => {
             <Route path="/" exact render={() => <MainContainer/>}/>
 
             <Route path="/login" render={() => <LoginContainer/>}/>
-            <Route path="/admin" exact render={() => <ProtectedRoute Component={DashboardContainer}/>}/>
+            <Route path="/admin" exact render={() => <ProtectedRoute Component={Admin}/>}/>
           </Switch>
         </div>
         {!isAdmin && <Footer/>}
