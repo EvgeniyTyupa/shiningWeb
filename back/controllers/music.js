@@ -3,15 +3,14 @@ const errorHandler = require('../utils/errorHandler')
 const { moveFile } = require('../utils/moveFile')
 require('dotenv').config()
 const fs = require('fs')
-const { constants } = require('os')
 
 module.exports.create = async function(req, res) {
     let image = req.files.image
     let track = req.files.track
 
     try{
-        let imagePath = moveFile('./public/images/', image)
-        let trackPath = moveFile('./public/music/', track)
+        let imagePath = await moveFile('./public/images/', image)
+        let trackPath = await moveFile('./public/music/', track)
 
         const newTrack = new Track({
             name: req.body.name,
