@@ -3,10 +3,12 @@ import multi from 'redux-multi';
 import thunkMiddlware from 'redux-thunk';
 import adminReducer from "./adminReducer";
 import commonReducer from "./commonReducer";
+import musicReducer from "./musicReducer";
 
 let reducers = combineReducers({
     common: commonReducer,
-    admin: adminReducer
+    admin: adminReducer,
+    music: musicReducer
 });
 
 

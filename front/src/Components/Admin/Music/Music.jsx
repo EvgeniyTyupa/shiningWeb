@@ -1,9 +1,11 @@
+import MusicAddForm from '../../Forms/Admin/Music/MusicAddForm'
 import TabLayout from '../../UI/Admin/TabLayout/TabLayout'
 import classes from './Music.module.css'
 
 const Music = (props) => {
+    const { music } = props
     return(
-        <TabLayout header="Music">
+        <TabLayout header="Music" AddComponent={MusicAddForm}>
             
         </TabLayout>
     )

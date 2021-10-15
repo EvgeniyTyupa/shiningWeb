@@ -1,0 +1,17 @@
+.main {
+    width: 25%;
+    background-color: white;
+    border-radius: 16px;
+    padding: 1.4rem;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 13px 0px black;
+}
+.field {
+    margin: 15px 0;
+}
+.main div {
+    width: 100%;
+}
+.main button {
+    width: 100%;
+}
