@@ -3,6 +3,7 @@ const errorHandler = require('../utils/errorHandler')
 const { moveFile } = require('../utils/moveFile')
 require('dotenv').config()
 const fs = require('fs')
+const { constants } = require('os')
 
 module.exports.create = async function(req, res) {
     let image = req.files.image
@@ -46,7 +47,7 @@ module.exports.get = async function(req, res){
 
 module.exports.update = async function(req, res){
     try{
-        let track = await Track.findById(req.params.id)
+        const track = await Track.findById(req.params.id)
         if(!track){
             return res.status(404).send({
                 message: "Track not found!"
@@ -64,30 +65,26 @@ module.exports.update = async function(req, res){
 
         if(req.files.image){
             let newPath = track.image.replace(process.env.HOST, ".")
-            await fs.unlink(newPath, function(err){
-                if(err) throw err
-                console.log('Image deleted.')
-                imagePath = moveFile('./public/images/', req.files.image)
-                update = {
-                    ...update,
-                    image: imagePath
-                }
-                console.log(update)
-            })
+            await fs.unlinkSync(newPath)
+            console.log('Image deleted.')
+            imagePath = moveFile('./public/images/', req.files.image)
+            update = {
+                ...update,
+                image: imagePath
+            }
         }
 
-        if(req.files.music){
-            await fs.unlink(track.path, function(err){
-                if(err) throw err
-                console.log('Track deleted.')
-                trackPath = moveFile('./public/images/', req.files.track)
-                update = {
-                    ...update,
-                    path: trackPath
-                }
-            })
+        if(req.files.track){
+            let newPath = track.path.replace(process.env.HOST, ".")
+            await fs.unlinkSync(newPath)
+            console.log('Track deleted.')
+            trackPath = moveFile('./public/music/', req.files.track)
+            update = {
+                ...update,
+                path: trackPath
+            }
         }
-        console.log(update)
+
         Object.assign(track, update)
 
         await track.save()
@@ -96,8 +93,34 @@ module.exports.update = async function(req, res){
             message: "ok",
             track: track
         })
-        
     }catch(err){
+        errorHandler(res, err)
+    }
+}
+
+module.exports.delete = async function(req, res){
+    try{
+        const track = await Track.findById(req.params.id)
+        if(!track){
+            return res.status(404).send({
+                message: "Track not found!"
+            })
+        }
+        let newImagePath = track.image.replace(process.env.HOST, ".")
+        let newTrackPath = track.path.replace(process.env.HOST, ".")
+        
+        await fs.unlinkSync(newImagePath)
+        console.log('Image deleted.')
+        
+        await fs.unlinkSync(newTrackPath)
+        console.log('Track deleted.')
+
+        await track.remove()
+
+        return res.status(200).json({
+            message: "ok"
+        })
+    }catch(err) {
         errorHandler(res, err)
     }
 }

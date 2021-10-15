@@ -12,6 +12,4 @@ module.exports.moveFile = function(path, file) {
     }catch(err){
         console.log(err)
     }
-    
-
 }
