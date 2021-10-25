@@ -24,7 +24,7 @@ const App = (props) => {
   return(
     <BrowserRouter>
       <div className="main">
-        {!isAdmin && <Navbar/>}
+        {/* {!isAdmin && <Navbar/>} */}
         <div className="content">
           {props.isMailSended && <MailSuccess/>}
           <Switch>

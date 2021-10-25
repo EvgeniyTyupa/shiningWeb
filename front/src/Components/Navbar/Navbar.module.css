@@ -75,3 +75,17 @@
     display: flex;
     justify-content: space-between;
 }
+.menuItem button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    transition-duration: .3s;
+    font-weight: 500;
+}
+.menuItem button:hover {
+    color: #FC5E08;
+}

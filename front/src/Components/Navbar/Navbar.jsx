@@ -47,6 +47,10 @@ const useStyles = makeStyles({
 })
 
 const Navbar = (props) => {
+    const { refArray } = props
+
+    console.log(refArray)
+
     const { t, i18n } = useTranslation()
 
     const material = useStyles()
@@ -58,6 +62,10 @@ const Navbar = (props) => {
     useEffect(() => {
         Aos.init({ duration: 500 })
     }, [])
+
+    const handleScroll = (ref) => {
+        ref.current.scrollIntoView()
+    }
 
     return(
         <nav className={classes.main} data-aos="fade-down">
@@ -80,30 +88,35 @@ const Navbar = (props) => {
             <div className={classes.bot}>
                 <div className={cx(classes.side, classes.botContainer)}>
                     <div className={classes.menuItem}>
-                        <NavLink exact to={"/"} activeClassName={classes.active}>{t("navbar.main")}</NavLink>
+                        {/* <NavLink exact to={"/"} activeClassName={classes.active}>{t("navbar.main")}</NavLink> */}
+                        <button onClick={() => handleScroll(refArray[0])}>Главная</button>
                     </div>
                     <div className={classes.menuItem}>
-                        <NavLink to={"/services"} activeClassName={classes.active}>{t("navbar.services")}</NavLink>
+                        {/* <NavLink to={"/services"} activeClassName={classes.active}>{t("navbar.services")}</NavLink> */}
+                        <button onClick={() => handleScroll(refArray[1])}>О студии</button>
                     </div>
                     <div className={classes.menuItem}>
-                        <NavLink to={"/news"} activeClassName={classes.active}>{t("navbar.news")}</NavLink>
+                        {/* <NavLink to={"/news"} activeClassName={classes.active}>{t("navbar.news")}</NavLink> */}
+                        <button onClick={() => handleScroll(refArray[2])}>Релизы</button>
                     </div>
-                    <div className={classes.menuItem}>
+                    {/* <div className={classes.menuItem}>
                         <NavLink to={"/artists"} activeClassName={classes.active}>{t("navbar.artists")}</NavLink>
-                    </div>
+                    </div> */}
                 </div>
                 <div className={classes.logoContainer}>
                     <img src={logo} alt="logo"/>
                 </div>
                 <div className={cx(classes.side, classes.botContainer)}>
                     <div className={classes.menuItem}>
-                        <NavLink to={"/label"} activeClassName={classes.active}>{t("navbar.label")}</NavLink>
+                        {/* <NavLink to={"/label"} activeClassName={classes.active}>{t("navbar.label")}</NavLink> */}
+                        <button onClick={() => handleScroll(refArray[3])}>Отзывы</button>
                     </div>
                     <div className={classes.menuItem}>
-                        <NavLink to={"/about"} activeClassName={classes.active}>{t("navbar.about")}</NavLink>
+                        {/* <NavLink to={"/about"} activeClassName={classes.active}>{t("navbar.about")}</NavLink> */}
+                        <button onClick={() => handleScroll(refArray[4])}>Контакты</button>
                     </div>
                     <div className={classes.menuItem}>
-                        <NavLink to={"/contacts"} activeClassName={classes.active}>{t("navbar.contacts")}</NavLink>
+                        {/* <NavLink to={"/contacts"} activeClassName={classes.active}>{t("navbar.contacts")}</NavLink> */}
                     </div>
                 </div>
             </div>

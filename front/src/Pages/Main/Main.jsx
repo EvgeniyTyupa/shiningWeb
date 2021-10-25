@@ -26,6 +26,7 @@ import Slider from 'react-slick'
 import { usePartners } from '../../Hooks/usePartners'
 import Spy from '../../Components/Spy/Spy'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import Navbar from '../../Components/Navbar/Navbar'
 
 const Main = (props) => {
     const { viewAllNews, viewAllReleases, currentTrack, setCurrentTrack } = props
@@ -39,15 +40,12 @@ const Main = (props) => {
     }, [])
 
     const homeRef = useRef()
-    const previlegiesRef = useRef()
-    const servicesRef = useRef()
     const itemsRef = useRef()
     const commentsRef = useRef()
     const aboutRef = useRef()
-    const orderRef = useRef()
-    const clientsRef = useRef()
+    const mapRef = useRef()
 
-    let refArray = [homeRef, previlegiesRef, servicesRef, itemsRef, commentsRef, aboutRef, orderRef, clientsRef]
+    let refArray = [homeRef, aboutRef, itemsRef, commentsRef, mapRef]
 
     const news = [
         { _id: "cvf", date: "19.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
@@ -128,6 +126,7 @@ const Main = (props) => {
 
     return(
         <div className={classes.main}>
+            <Navbar refArray={refArray}/>
             <Spy refs={refArray} className={classes.spy}/>
             <div className={classes.home} ref={homeRef}>
                 <img src={micropone} data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900" alt="micro" className={classes.micro}/>
@@ -136,7 +135,7 @@ const Main = (props) => {
                     <OrderForm/>
                 </div>
             </div>
-            <div className={classes.we} ref={previlegiesRef}>
+            {/* <div className={classes.we} ref={previlegiesRef}>
                 <div className={classes.weTitleContainer}>
                     <h2>{t("home.we.title")}</h2>
                     <p>{t("home.we.studio")} <strong>Shining Music</strong> - {t("home.we.one")}</p>
@@ -152,11 +151,25 @@ const Main = (props) => {
                         </div>
                     ))}
                 </div>
-            </div>
-            <div className={classes.services} ref={servicesRef}>
+            </div> */}
+            {/* <div className={classes.services} ref={servicesRef}>
                 <div className={classes.servicesContainer}>
                     <SliderComponent items={services}/>
                 </div>
+            </div> */}
+            
+            <div className={classes.about} ref={aboutRef}>
+                <h2>{t("about.title")}</h2>
+                <div className={classes.aboutSliderContainer}>
+                    <Slider {...settings} className={classes.sliderAbout}>
+                        {about.map(item => <img src={item} alt="studio_photo" key=""/>)}
+                    </Slider>
+                </div>
+                <p className={classes.aboutText}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed urna massa. Maecenas vel risus sagittis, placerat dolor vitae, interdum nibh. Aenean vestibulum eleifend sapien, quis rhoncus nulla euismod ac. Sed vel ipsum in mauris viverra placerat. Morbi tempus bibendum tortor, vel rutrum felis elementum id. Sed a nulla consequat, posuere justo vitae, rhoncus nisl. Curabitur rutrum pulvinar diam in venenatis.
+                    <br/><br/>
+                    Sed eget diam in dolor elementum molestie pharetra rhoncus nisl. Morbi sagittis venenatis purus non laoreet. Praesent interdum ipsum vel eros facilisis, sed gravida est faucibus. Maecenas porttitor mauris eget enim interdum, at vulputate augue ullamcorper. Morbi rutrum magna neque, a sollicitudin neque efficitur id. Phasellus eget magna vel ligula dignissim sollicitudin a vitae leo. Phasellus imperdiet enim vitae est pharetra, non elementum dui vulputate. Quisque vehicula enim sit amet elit ornare, a interdum ipsum consectetur. Integer viverra auctor ultrices. Cras odio orci, ullamcorper sed fringilla egestas, malesuada a mauris. Vivamus ut congue tellus. In posuere varius orci pretium posuere. Etiam sit amet lectus sed leo cursus mollis et vitae turpis. Etiam lorem ligula, volutpat euismod ante at, venenatis varius nulla. Maecenas blandit, elit ac interdum facilisis, metus ante lacinia nunc, at vehicula nibh erat in augue. Proin tempus enim quis risus imperdiet, pharetra euismod leo mollis.
+                </p>
             </div>
             <div className={classes.doubleBlock} ref={itemsRef}>
                 <div className={cx(classes.doubleSide, classes.news)}>
@@ -188,34 +201,21 @@ const Main = (props) => {
                 </ScrollContainer>
                 <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/>
             </div>
-            <div className={classes.about} ref={aboutRef}>
-                <h2>{t("about.title")}</h2>
-                <div className={classes.aboutSliderContainer}>
-                    <Slider {...settings} className={classes.sliderAbout}>
-                        {about.map(item => <img src={item} alt="studio_photo" key=""/>)}
-                    </Slider>
-                </div>
-                <p className={classes.aboutText}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed urna massa. Maecenas vel risus sagittis, placerat dolor vitae, interdum nibh. Aenean vestibulum eleifend sapien, quis rhoncus nulla euismod ac. Sed vel ipsum in mauris viverra placerat. Morbi tempus bibendum tortor, vel rutrum felis elementum id. Sed a nulla consequat, posuere justo vitae, rhoncus nisl. Curabitur rutrum pulvinar diam in venenatis.
-                    <br/><br/>
-                    Sed eget diam in dolor elementum molestie pharetra rhoncus nisl. Morbi sagittis venenatis purus non laoreet. Praesent interdum ipsum vel eros facilisis, sed gravida est faucibus. Maecenas porttitor mauris eget enim interdum, at vulputate augue ullamcorper. Morbi rutrum magna neque, a sollicitudin neque efficitur id. Phasellus eget magna vel ligula dignissim sollicitudin a vitae leo. Phasellus imperdiet enim vitae est pharetra, non elementum dui vulputate. Quisque vehicula enim sit amet elit ornare, a interdum ipsum consectetur. Integer viverra auctor ultrices. Cras odio orci, ullamcorper sed fringilla egestas, malesuada a mauris. Vivamus ut congue tellus. In posuere varius orci pretium posuere. Etiam sit amet lectus sed leo cursus mollis et vitae turpis. Etiam lorem ligula, volutpat euismod ante at, venenatis varius nulla. Maecenas blandit, elit ac interdum facilisis, metus ante lacinia nunc, at vehicula nibh erat in augue. Proin tempus enim quis risus imperdiet, pharetra euismod leo mollis.
-                </p>
-            </div>
-            <div className={classes.order} ref={orderRef}>
+            {/* <div className={classes.order} ref={orderRef}>
                 <h3>{t("order.title")}</h3>
                 <div className={classes.orderContainer} data-aos="fade-up" data-aos-duration="1500">
                     <OrderForm/>
                 </div>
-            </div>
-            <div className={classes.partners} ref={clientsRef}>
+            </div> */}
+            {/* <div className={classes.partners} ref={clientsRef}>
                 <h2>{t("partners.title")}</h2>
                 <div className={classes.partnersSliderContainer}>
                     <Slider {...settings} dots={false}>
                         {partners.map(item => <img src={item.img} key={item.id} alt="partner" className={classes.partner}/>)}
                     </Slider>
                 </div>
-            </div>
-            <div className={classes.map}>
+            </div> */}
+            <div className={classes.map} ref={mapRef}>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10705.115485554334!2d35.05555530661709!3d47.87292777408983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc640f5e5b36c3%3A0x637afc1845c25c28!2z0KHRgtGD0LTRltGPINC30LLRg9C60L7Qt9Cw0L_QuNGB0YMgU2hpbmluZyBNdXNpYw!5e0!3m2!1sru!2sua!4v1631712606516!5m2!1sru!2sua" allowFullScreen="" loading="lazy"></iframe>
             </div>
         </div>
