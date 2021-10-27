@@ -122,9 +122,9 @@ const OrderForm = (props) => {
                         )}
                     />
                 </div>
-                <div className={cx(classes.field, classes.messengers)}>
+                {/* <div className={cx(classes.field, classes.messengers)}>
                     <Messengers/>
-                </div>
+                </div> */}
                 <CustomButton text={t("actions.submit")} type="submit" className={classes.submit} />
             </form>
             <div className={classes.rules}>

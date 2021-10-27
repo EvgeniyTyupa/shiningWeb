@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import classes from './Main.module.css'
 import micropone from '../../Assets/images/micro.svg'
 import slogan from '../../Assets/images/slogan.svg'
@@ -28,6 +28,9 @@ import Spy from '../../Components/Spy/Spy'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import Navbar from '../../Components/Navbar/Navbar'
 
+import Styled from 'styled-components'
+import { useMusic } from '../../Hooks/useMusic'
+
 const Main = (props) => {
     const { viewAllNews, viewAllReleases, currentTrack, setCurrentTrack } = props
 
@@ -47,58 +50,12 @@ const Main = (props) => {
 
     let refArray = [homeRef, aboutRef, itemsRef, commentsRef, mapRef]
 
-    const news = [
-        { _id: "cvf", date: "19.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-        { _id: "cvfasd", date: "17.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-        { _id: "cvhgghff", date: "15.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-        { _id: "cvghjf", date: "13.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-        { _id: "cvhjghf", date: "12.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-        { _id: "cmbvf", date: "11.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-        { _id: "cvnmbf", date: "10.08.21", image: service_img_tmp, text: "Пространство нашей мастерской можно использовать для ваших фотосессий" },
-    ]
+    const [currentGenre, setCurrentGenre] = useState(0)
 
-    const music = [ 
-        { 
-            _id: "vcb",
-            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
-            name: "Sehnsuht",
-            artist: "Rammstein",
-            genre: "Rock",
-            year_of_release: 1997
-        },
-        { 
-            _id: "vdfscb",
-            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
-            name: "Sehnsuht",
-            artist: "Rammstein",
-            genre: "Rock",
-            year_of_release: 1997
-        },
-        { 
-            _id: "vfghfcb",
-            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
-            name: "Sehnsuht",
-            artist: "Rammstein",
-            genre: "Rock",
-            year_of_release: 1997
-        },
-        { 
-            _id: "vc3453b",
-            image: "https://img.discogs.com/vnuRG-UXE_-ul8u5d0LQmjfl9bY=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-944161-1175705091.jpeg.jpg",
-            name: "Sehnsuht",
-            artist: "Rammstein",
-            genre: "Rock",
-            year_of_release: 1997
-        }
-    ]
-
-    const services = [
-        { _id: "123", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
-        { _id: "124", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
-        { _id: "125", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
-        { _id: "126", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
-        { _id: "127", title: "запись", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum", img: service_img_tmp },
-    ]
+    const handleGenre = (index) => {
+        setCurrentGenre(index)
+        setCurrentTrack(null)
+    }
 
     const reviews = [
         { _id: "gdfghfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
@@ -113,16 +70,7 @@ const Main = (props) => {
 
     const about = [about1, about1, about1, about1, about1]
 
-    const partners = usePartners()
-
-    const settings = {
-        dots: true,
-        autoplay: true,
-        centerMode: true,
-        autoplaySpeed: 10000,
-        arrow: true,
-        slidesToShow: 3,
-    }
+    const music = useMusic()
 
     return(
         <div className={classes.main}>
@@ -159,38 +107,49 @@ const Main = (props) => {
             </div> */}
             
             <div className={classes.about} ref={aboutRef}>
-                <h2>{t("about.title")}</h2>
-                <div className={classes.aboutSliderContainer}>
+                
+                {/* <div className={classes.aboutSliderContainer}>
                     <Slider {...settings} className={classes.sliderAbout}>
                         {about.map(item => <img src={item} alt="studio_photo" key=""/>)}
                     </Slider>
-                </div>
-                <p className={classes.aboutText}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed urna massa. Maecenas vel risus sagittis, placerat dolor vitae, interdum nibh. Aenean vestibulum eleifend sapien, quis rhoncus nulla euismod ac. Sed vel ipsum in mauris viverra placerat. Morbi tempus bibendum tortor, vel rutrum felis elementum id. Sed a nulla consequat, posuere justo vitae, rhoncus nisl. Curabitur rutrum pulvinar diam in venenatis.
-                    <br/><br/>
-                    Sed eget diam in dolor elementum molestie pharetra rhoncus nisl. Morbi sagittis venenatis purus non laoreet. Praesent interdum ipsum vel eros facilisis, sed gravida est faucibus. Maecenas porttitor mauris eget enim interdum, at vulputate augue ullamcorper. Morbi rutrum magna neque, a sollicitudin neque efficitur id. Phasellus eget magna vel ligula dignissim sollicitudin a vitae leo. Phasellus imperdiet enim vitae est pharetra, non elementum dui vulputate. Quisque vehicula enim sit amet elit ornare, a interdum ipsum consectetur. Integer viverra auctor ultrices. Cras odio orci, ullamcorper sed fringilla egestas, malesuada a mauris. Vivamus ut congue tellus. In posuere varius orci pretium posuere. Etiam sit amet lectus sed leo cursus mollis et vitae turpis. Etiam lorem ligula, volutpat euismod ante at, venenatis varius nulla. Maecenas blandit, elit ac interdum facilisis, metus ante lacinia nunc, at vehicula nibh erat in augue. Proin tempus enim quis risus imperdiet, pharetra euismod leo mollis.
-                </p>
+                </div> */}
+                <div className={classes.aboutBack}>
+                    <AboutBack  image={about[0]}/>
+                    <div className={classes.aboutTextContainer}>
+                        <h2>{t("about.title")}</h2>
+                        <p className={classes.aboutText}>
+                            Олександр Ількаєв – досвідчений музичний продюсер, звукоінженер та засновник нашої студії Shining Music. Олександр має 15 років досвіду роботи в музичній індустрії. В 18 років він підписав свій перший контракт із лейблом у Сан-Пауло (Бразилії), а за ними контракти в Лос-Анджелесі (США) та Голд-Кості (Австралія). У 2015 році закінчив курс музичного продюсера та звукоінженера у Сан-Франциско (США). За своє життя він створив більше 1000 успішних робіт у різних стилях. Всі вони були зроблені для українських і закодронних артистів й лунають на радіостанціях по всьому світу. За свою кар’єру Олександр встиг попрацювати із Snapchat та створити на студії світову Тік Ток зірку DANIM на 10 млн підписників.
+                            <br/><br/>
+                            Саме такий досвід дає Олександру розуміння як швидко відчути що шукає автор, що хоче почути слухач і як це довершено поєднати у майбутній хіт. Найважливіше – як митець, він сам розуміє на скільки важливо знайти й зберегти власний звук автора та збалансувати його із комерційним звучанням.
+                        </p>
+                    </div>
+                </div>                
             </div>
             <div className={classes.doubleBlock} ref={itemsRef}>
-                <div className={cx(classes.doubleSide, classes.news)}>
+                {/* <div className={cx(classes.doubleSide, classes.news)}>
                     <img src={news_lines} alt="lines" className={classes.newsLines}/>
                     <h2>{t("news.title")}</h2>
                     <div className={classes.itemsWrapper}>
                         {news.slice(0, 3).map(item => <NewsItem item={item} key={item._id}/>)}
                     </div>
                     <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllNews}/>
-                </div>
+                </div> */}
                 <div className={cx(classes.doubleSide, classes.releases)}>
                     <img src={releases_lines} alt="lines" className={classes.releasesLines}/>
                     <h2>{t("releases.title")}</h2>
+                    <div className={classes.genreButtons}>
+                        {music.map((item, index) => (
+                            <CustomButton text={item.title} action={() => handleGenre(index)}/>
+                        ))}
+                    </div>
                     <div className={classes.itemsWrapper}>
-                        {music.slice(0, 3).map((item, index) => 
+                        {music[currentGenre].music.slice(0, 3).map((item, index) => 
                             <div className={classes.itemContainer}>
                                 <img src={vinyl} alt="vinyl" className={cx(classes.vinyl, currentTrack === index && classes.activeVinyl)}/>
                                 <ReleaseItem item={item} key={item._id} index={index} setCurrentTrack={setCurrentTrack} currentTrack={currentTrack}/>
                             </div>)}
                     </div>
-                    <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllReleases}/>
+                    {/* <CustomButton text={t("actions.all")} className={classes.lookAll} action={viewAllReleases}/> */}
                 </div>
             </div>
             <div className={classes.reviews} ref={commentsRef}>
@@ -199,7 +158,7 @@ const Main = (props) => {
                 <ScrollContainer className={classes.reviewsWrapper} hideScrollbars={false} horizontal vertical={false}>
                     {reviews.map(item => <ReviewItem item={item} key={item._id}/>)}
                 </ScrollContainer>
-                <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/>
+                {/* <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/> */}
             </div>
             {/* <div className={classes.order} ref={orderRef}>
                 <h3>{t("order.title")}</h3>
@@ -221,5 +180,17 @@ const Main = (props) => {
         </div>
     )
 }
+
+const AboutBack = Styled.div`
+    background-image: ${({ image }) => `url(${image})`};
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+  -webkit-filter: blur(8px);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+`
 
 export default Main

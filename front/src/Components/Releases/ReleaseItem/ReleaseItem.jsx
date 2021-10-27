@@ -29,7 +29,6 @@ const ReleaseItem = (props) => {
 
     const stopPlay = () => {
         setIsPlay(false)
-        setCurrentTrack(null)
     }
 
     const getCurrDuration = (e) => {

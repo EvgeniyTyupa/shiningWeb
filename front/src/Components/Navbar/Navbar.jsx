@@ -49,8 +49,6 @@ const useStyles = makeStyles({
 const Navbar = (props) => {
     const { refArray } = props
 
-    console.log(refArray)
-
     const { t, i18n } = useTranslation()
 
     const material = useStyles()

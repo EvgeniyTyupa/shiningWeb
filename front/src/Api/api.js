@@ -4,6 +4,10 @@ const instance = axios.create({
     baseURL: 'http://localhost:3002/api'
 })
 
+const tgToken = "1277105148:AAFhnqIm9SKeNy6Ygv-_NlXxTmwhSQwTgJo"
+const chatId = "-1001430648003"
+const tgUrl = "https://api.telegram.org/bot" + tgToken + "/sendMessage"
+
 instance.interceptors.request.use(
     config => {
         config.headers.authorization = `Bearer ${localStorage.usertoken}`
