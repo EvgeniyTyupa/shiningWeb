@@ -60,11 +60,11 @@ const Footer = (props) => {
                 <div className={classes.side}></div>
                 <img src={logo} alt="logo" className={classes.logo}/>
                 <div className={cx(classes.side, classes.info)}>
-                    <TextField select classes={material} onChange={handleLanguage} defaultValue="ru">
+                    {/* <TextField select classes={material} onChange={handleLanguage} defaultValue="ru">
                         <MenuItem value="ru">RU</MenuItem>
                         <MenuItem value="ua">UA</MenuItem>
                         <MenuItem value="en">EN</MenuItem>
-                    </TextField>
+                    </TextField> */}
                     <div className={classes.field}>
                         <LocationIcon/>
                         <span>{t("footer.location")}</span>

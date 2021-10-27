@@ -8,6 +8,10 @@
     transition-duration: .3s;
     color: white;
 }
-.socialItems a:hover {
-    transform: scale(1.05);
+.socialItems svg path {
+    transition-duration: .3s;
+}
+.socialItems a:hover svg path {
+    /* fill: #FC5E08; */
+    color: #FC5E08
 }

@@ -4,8 +4,8 @@ const instance = axios.create({
     baseURL: 'http://localhost:3002/api'
 })
 
-const tgToken = "1277105148:AAFhnqIm9SKeNy6Ygv-_NlXxTmwhSQwTgJo"
-const chatId = "-1001430648003"
+const tgToken = "2076946657:AAGqw5LMt7rBw3mA6x-uTsCcqx_DZKF5wa0"
+const chatId = "-747372232"
 const tgUrl = "https://api.telegram.org/bot" + tgToken + "/sendMessage"
 
 instance.interceptors.request.use(
@@ -17,7 +17,13 @@ instance.interceptors.request.use(
 
 export const mailApi = {
     sendMail(name, phone){
-        return instance.post(`/mail`, { name, phone })
+        let message = "<strong>Новая заявка!</strong>\n<strong>Имя:</strong> " + name +  "\n<strong>Телефон:</strong> " + phone;
+        const data = {
+            chat_id: chatId,
+            text: message,
+            parse_mode: 'HTML'
+        }
+        return axios.post(tgUrl, data)
         .then(response => response.data)
     }
 }

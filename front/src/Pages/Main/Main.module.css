@@ -243,6 +243,14 @@
 }
 .genreButtons button {
     width: fit-content;
+    background-color: #FC5E08;
+    color: white;
+    border-radius: 0;
+    font-family: 'Montserrat' !important;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.23);
+}
+.genreButtons button:hover {
+    background-color: #eb5200;
 }
 .activeGenre {
     background-color: white !important;
@@ -503,5 +511,24 @@
 @media screen and (max-width: 1500px) {
     .merities {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .itemsWrapper {
+        width: 100%;
+    }
+    .reviewsWrapper {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .about h2 {
+        margin-block-end: 25px;
+        margin-block-start: 25px;
+    }
+    .aboutText {
+        font-size: 16px;
     }
 }

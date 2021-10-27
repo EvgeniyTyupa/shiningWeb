@@ -76,26 +76,26 @@ const Navbar = (props) => {
                 </div>
                 <div className={classes.side}>
                     <Social/>
-                    <TextField classes={material} select onChange={handleLanguage} defaultValue="ru">
+                    {/* <TextField classes={material} select onChange={handleLanguage} defaultValue="ru">
                         <MenuItem value="ru">RU</MenuItem>
                         <MenuItem value="ua">UA</MenuItem>
                         <MenuItem value="en">EN</MenuItem>
-                    </TextField>
+                    </TextField> */}
                 </div>
             </div>
             <div className={classes.bot}>
                 <div className={cx(classes.side, classes.botContainer)}>
                     <div className={classes.menuItem}>
                         {/* <NavLink exact to={"/"} activeClassName={classes.active}>{t("navbar.main")}</NavLink> */}
-                        <button onClick={() => handleScroll(refArray[0])}>Главная</button>
+                        <button onClick={() => handleScroll(refArray[0])}>Головна</button>
                     </div>
                     <div className={classes.menuItem}>
                         {/* <NavLink to={"/services"} activeClassName={classes.active}>{t("navbar.services")}</NavLink> */}
-                        <button onClick={() => handleScroll(refArray[1])}>О студии</button>
+                        <button onClick={() => handleScroll(refArray[1])}>Про нас</button>
                     </div>
                     <div className={classes.menuItem}>
                         {/* <NavLink to={"/news"} activeClassName={classes.active}>{t("navbar.news")}</NavLink> */}
-                        <button onClick={() => handleScroll(refArray[2])}>Релизы</button>
+                        <button onClick={() => handleScroll(refArray[2])}>Релізи</button>
                     </div>
                     {/* <div className={classes.menuItem}>
                         <NavLink to={"/artists"} activeClassName={classes.active}>{t("navbar.artists")}</NavLink>
@@ -107,11 +107,11 @@ const Navbar = (props) => {
                 <div className={cx(classes.side, classes.botContainer)}>
                     <div className={classes.menuItem}>
                         {/* <NavLink to={"/label"} activeClassName={classes.active}>{t("navbar.label")}</NavLink> */}
-                        <button onClick={() => handleScroll(refArray[3])}>Отзывы</button>
+                        <button onClick={() => handleScroll(refArray[3])}>Відгуки</button>
                     </div>
                     <div className={classes.menuItem}>
                         {/* <NavLink to={"/about"} activeClassName={classes.active}>{t("navbar.about")}</NavLink> */}
-                        <button onClick={() => handleScroll(refArray[4])}>Контакты</button>
+                        <button onClick={() => handleScroll(refArray[4])}>Контакти</button>
                     </div>
                     <div className={classes.menuItem}>
                         {/* <NavLink to={"/contacts"} activeClassName={classes.active}>{t("navbar.contacts")}</NavLink> */}
