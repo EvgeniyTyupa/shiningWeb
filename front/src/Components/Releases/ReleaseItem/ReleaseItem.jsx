@@ -3,7 +3,6 @@ import play from '../../../Assets/icons/play.svg'
 import pause from '../../../Assets/icons/pause.svg'
 import { useEffect, useRef, useState } from 'react'
 import { cx } from '../../../Utils/classnames'
-import track from "../../../Assets/track.wav"
 import MusicPlayer from '../../MusicPlayer/MusicPlayer'
 
 
@@ -107,7 +106,7 @@ const ReleaseItem = (props) => {
                 </div>}
                 <audio 
                     ref={audioRef} 
-                    src={track} 
+                    src={item.src} 
                     onLoadedData={(e) => {
                         setDuration(e.currentTarget.duration.toFixed(2))
                     }}

@@ -31,6 +31,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 import Styled from 'styled-components'
 import { useMusic } from '../../Hooks/useMusic'
 import { Button } from '@material-ui/core'
+import { useReviews } from '../../Hooks/useReviews'
 
 const Main = (props) => {
     const { viewAllNews, viewAllReleases, currentTrack, setCurrentTrack } = props
@@ -58,16 +59,7 @@ const Main = (props) => {
         setCurrentTrack(null)
     }
 
-    const reviews = [
-        { _id: "gdfghfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdffghhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdfdfghg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdfhfghg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdfashg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdfsdfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdfhagg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-        { _id: "gdfasdfhg", text: "Очень хорошая студия, и директор симпатичный))", user_photo: "https://img.discogs.com/YPPgYIJx-vlmLNW1ZMdSnVtkrzU=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-79949-1486060997-2610.jpeg.jpg", user_name: "Фредди Меркьюри" },
-    ]
+    const reviews = useReviews()
 
     const about = [about1, about1, about1, about1, about1]
 
@@ -144,7 +136,7 @@ const Main = (props) => {
                         ))}
                     </div>
                     <div className={classes.itemsWrapper}>
-                        {music[currentGenre].music.slice(0, 3).map((item, index) => 
+                        {music[currentGenre].music.map((item, index) => 
                             <div className={classes.itemContainer}>
                                 <img src={vinyl} alt="vinyl" className={cx(classes.vinyl, currentTrack === index && classes.activeVinyl)}/>
                                 <ReleaseItem item={item} key={item._id} index={index} setCurrentTrack={setCurrentTrack} currentTrack={currentTrack}/>

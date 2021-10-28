@@ -1,10 +1,9 @@
 .main {
-    min-width: 295px;
     height: 295px;
+    min-width: 650px;
     background-color: #DFDFDF;
     box-shadow: 0px 6px 15px -7px black;
     padding: 28px;
-    box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -25,6 +24,7 @@
     margin-block-end: 0;
     margin-block-start: 0;
     margin-top: 10px;
+    padding-bottom: 23px;
 }
 
 .user {
@@ -47,6 +47,6 @@
     font-size: 19px;
     line-height: 23px;
     text-align: center;
-
+    margin-left: 10px;
     color: #292929;
 }

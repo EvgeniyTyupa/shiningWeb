@@ -17,7 +17,7 @@ instance.interceptors.request.use(
 
 export const mailApi = {
     sendMail(name, phone){
-        let message = "<strong>Новая заявка!</strong>\n<strong>Имя:</strong> " + name +  "\n<strong>Телефон:</strong> " + phone;
+        let message = "<strong>Нова заявка!</strong>\n<strong>Iм'я:</strong> " + name +  "\n<strong>Телефон:</strong> " + phone;
         const data = {
             chat_id: chatId,
             text: message,
