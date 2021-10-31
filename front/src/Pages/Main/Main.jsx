@@ -184,6 +184,10 @@ const AboutBack = Styled.div`
     width: 100%;
     height: 100vh;
     position: absolute;
+
+    @media screen and (max-width: 1100px) {
+        background-position: center;
+    }
 `
 
 export default Main

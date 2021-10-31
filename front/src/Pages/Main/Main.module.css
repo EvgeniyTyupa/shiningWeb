@@ -532,3 +532,41 @@
         font-size: 16px;
     }
 }
+
+@media screen and (max-width: 1100px) {
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 0;
+        background-position: bottom;
+    }
+    .orderContainer {
+        margin-left: 0;
+        margin-top: 15%;
+        width: 50%;
+    }
+    .slogan {
+        width: 52vw;
+    }
+    .micro {
+        position: absolute;
+        left: 0;
+        top: 31%;
+    }
+    .aboutTextContainer {
+        margin-left: 0;
+        margin-right: 0;
+        width: 75%;
+    }
+    .genreButtons {
+        display: flex;
+        width: 71%;
+        flex-wrap: wrap;
+        flex: 0 0%;
+        justify-content: flex-start;
+        gap: 18px;
+    }
+    .genreButtons button {
+        margin: 0;
+    }
+}

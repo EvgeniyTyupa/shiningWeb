@@ -1,5 +1,3 @@
-import track from "../Assets/track.wav"
-
 // POP IMG
 import pop1 from '../Assets/music/pop/cover_01.jpg'
 import pop2 from '../Assets/music/pop/cover_02.jpg'
@@ -271,37 +269,37 @@ export const useMusic = () => {
                 { 
                     _id: "vcb",
                     image: hiphop1,
-                    name: "IN MY CAR",
+                    name: "In My Car",
                     artist: "DANIM",
                     genre: "Hip-Hop & Rap",
-                    year_of_release: 2020,
+                    year_of_release: 2021,
                     src: hiphop1_mus
                 },
                 { 
                     _id: "vdfscb",
                     image: hiphop2,
-                    name: "Sehnsuht",
-                    artist: "Rammstein",
+                    name: "Обожаю",
+                    artist: "Jane Soul",
                     genre: "Hip-Hop & Rap",
-                    year_of_release: 2020,
+                    year_of_release: 2017,
                     src: hiphop2_mus
                 },
                 { 
                     _id: "vfghfcb",
                     image: hiphop3,
-                    name: "Sehnsuht",
-                    artist: "Rammstein",
+                    name: "New Girl",
+                    artist: "Freeman",
                     genre: "Hip-Hop & Rap",
-                    year_of_release: 2021,
+                    year_of_release: 2018,
                     src: hiphop3_mus
                 },
                 { 
                     _id: "vfghfdgdfhfcb",
                     image: hiphop4,
-                    name: "Sehnsuht",
-                    artist: "VIDLIK",
+                    name: "Дилер Года",
+                    artist: "$hort",
                     genre: "Hip-Hop & Rap",
-                    year_of_release: 2019,
+                    year_of_release: 2021,
                     src: hiphop4_mus
                 },
             ]

@@ -89,3 +89,9 @@
 .menuItem button:hover {
     color: #FC5E08;
 }
+
+@media screen and (max-width: 1100px) {
+    .bot {
+        width: 100%;
+    }
+}

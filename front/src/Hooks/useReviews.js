@@ -1,6 +1,6 @@
 import one from '../Assets/images/reviews/one.jpg'
 import two from '../Assets/images/reviews/two.jpg'
-
+import three from '../Assets/images/reviews/three.jpg'
 import four from '../Assets/images/reviews/four.jpg'
 import five from '../Assets/images/reviews/five.jpg'
 import six from '../Assets/images/reviews/six.jpg'
@@ -24,7 +24,7 @@ export const useReviews = () => {
         { 
             _id: "3",
             user_name: "Валерія Лисакова",
-            user_photo: two,
+            user_photo: three,
             text: "Найкраща студія звукозапису! Висока якість, професіоналізм, творча атмосфера… Щоразу отримую море задоволення та натхнення. Власник студії Shining Music Records, Олександр Ількаєв – МАЙСТЕР своєї справи, дуже хороша людина, що привертає до себе. Вкладає душу в студію та у виконавців. Величезна вдячність за роботу!"
         },
         { 
