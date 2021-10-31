@@ -50,3 +50,10 @@
     margin-left: 10px;
     color: #292929;
 }
+
+@media screen and (max-width: 800px) {
+    .main {
+        height: 330px;
+        min-width: 555px;
+    }
+}

@@ -570,3 +570,16 @@
         margin: 0;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .reviews {
+        padding: 70px;
+    }
+    .reviewsWrapper {
+        padding-bottom: 50px;
+        height: max-content;
+    }
+    .itemsWrapper {
+        padding: 0 16%;
+    }
+}

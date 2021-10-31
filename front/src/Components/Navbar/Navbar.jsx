@@ -12,6 +12,7 @@ import Social from '../Social/Social';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import Burger from './Burger/Burger';
 
 const useStyles = makeStyles({
     root: {
@@ -117,6 +118,9 @@ const Navbar = (props) => {
                         {/* <NavLink to={"/contacts"} activeClassName={classes.active}>{t("navbar.contacts")}</NavLink> */}
                     </div>
                 </div>
+            </div>
+            <div className={classes.burger}>
+                <Burger refArray={refArray}/>
             </div>
         </nav>
     )
