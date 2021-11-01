@@ -3,6 +3,8 @@ import { Button, Drawer, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
+import { ClassNames } from '@emotion/react';
+import Social from '../../Social/Social';
 
 const Burger = (props) => {
     const { refArray } = props
@@ -37,6 +39,9 @@ const Burger = (props) => {
                     <button onClick={() => handleScroll(2)}>Релізи</button>
                     <button onClick={() => handleScroll(3)}>Відгуки</button>
                     <button onClick={() => handleScroll(4)}>Контакти</button>
+                </div>
+                <div className={classes.footer}>
+                    <Social/>
                 </div>
                 {/* <div className={classes.footer}>
                     <Button onClick={() => handleChangeLanguage("ru")} className={props.currentLanguage === "ru" ? classes.activeLang : undefined}>RU</Button>

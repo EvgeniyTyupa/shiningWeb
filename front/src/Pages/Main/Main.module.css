@@ -582,4 +582,33 @@
     .itemsWrapper {
         padding: 0 16%;
     }
+    .micro {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 556px) {
+    .slogan {
+        width: 65vw;
+    }
+    .about h2 {
+        font-size: 26px;
+    }
+    .aboutText {
+        font-size: 14px;
+    }
+    .vinyl {
+        left: -30px;
+        transition-duration: .5s;
+    }
+    .activeVinyl {
+        left: -50px
+    }
+    .genreButtons {
+        width: 95%;
+        justify-content: center;
+    }
+    .reviews h2 {
+        margin-block-end: 75px;
+    }
 }

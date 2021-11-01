@@ -15,3 +15,9 @@
     /* fill: #FC5E08; */
     color: #FC5E08
 }
+
+@media screen and (max-width: 800px) {
+    .socialItems a {
+        margin: 0 8px;
+    }
+}
