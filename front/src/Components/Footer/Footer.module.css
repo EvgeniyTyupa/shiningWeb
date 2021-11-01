@@ -62,3 +62,23 @@
         width: calc(100% - 120px);
     }
 }
+
+@media screen and (max-width: 468px) {
+    .logo {
+        width: 80px;
+    }
+    .info {
+        width: calc(100% - 80px);
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .logo {
+        display: none;
+    }
+    .info {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}

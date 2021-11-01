@@ -9,6 +9,7 @@ import ProtectedRoute from './Components/Common/ProtectedRoute/ProtectedRoute';
 import { useEffect, useState } from 'react';
 import LoginContainer from './Pages/Admin/Login/LoginContainer';
 import Admin from './Pages/Admin/Admin/Admin';
+import { setStartUserUrl } from './Redux/commonReducer';
 
 const App = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
@@ -20,6 +21,11 @@ const App = (props) => {
       setIsAdmin(true)
     }
   }, [window.location.pathname])
+
+  useEffect(() => {
+    props.setStartUserUrl(window.location.href)
+  }, [])
+
 
   return(
     <BrowserRouter>
@@ -44,4 +50,6 @@ let mapStateToProps = (state) => ({
   isMailSended: state.common.isMailSended
 })
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, {
+  setStartUserUrl
+})(App);

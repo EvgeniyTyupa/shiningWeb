@@ -46,3 +46,15 @@
 .footer svg path{
     color: #FC5E08
 }
+
+@media screen and (max-width: 468px) {
+    .body {
+        width: 80vw !important;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .body {
+        width: 85vw !important;
+    }
+}

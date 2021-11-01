@@ -69,3 +69,9 @@
     color: #FC5E08;
     margin-left: auto;
 }
+
+@media screen and (max-width: 400px) { 
+    .info h4 {
+        font-size: 15px;
+    }
+}

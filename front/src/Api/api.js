@@ -15,6 +15,8 @@ instance.interceptors.request.use(
     }
 )
 
+const tableURL = 'https://v1.nocodeapi.com/nadai/google_sheets/JOfwIJrsUBytLdOj?tabId=sheet1&api_key=GHCmpNtnTEhcSbDjA';
+
 export const mailApi = {
     sendMail(name, phone){
         let message = "<strong>Нова заявка!</strong>\n<strong>Iм'я:</strong> " + name +  "\n<strong>Телефон:</strong> " + phone;
@@ -25,6 +27,13 @@ export const mailApi = {
         }
         return axios.post(tgUrl, data)
         .then(response => response.data)
+    },
+    sendToGoogleTable(name, phone, startUserUrl) {
+        return axios.post(tableURL, JSON.stringify([[name, phone, startUserUrl]]), {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.data);
     }
 }
 

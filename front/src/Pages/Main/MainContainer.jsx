@@ -20,9 +20,9 @@ const MainContainer = (props) => {
         history.push("/music")
     }
 
-    useEffect(() => {
-        getReviews()
-    }, [])
+    // useEffect(() => {
+    //     getReviews()
+    // }, [])
 
     return(
         <>

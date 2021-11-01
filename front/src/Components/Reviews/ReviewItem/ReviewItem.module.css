@@ -64,3 +64,17 @@
         min-width: 345px;
     }
 }
+
+@media screen and (max-width: 468px) {
+    .main {
+        height: 100%;
+        min-width: 84%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main {
+        height: 100%;
+        min-width: 80%;
+    }
+}

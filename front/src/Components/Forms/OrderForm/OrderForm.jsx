@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 const OrderForm = (props) => {
     const { handleSubmit, control, reset } = useForm()
 
-    const { sendMail } = props
+    const { sendMail, startUserUrl } = props
 
     const { t } = useTranslation()
 
@@ -72,7 +72,8 @@ const OrderForm = (props) => {
     const onSubmit = (data, e) => {
         e.preventDefault()
         const { name, phone } = data
-        sendMail(name, phone)
+        
+        sendMail(name, phone, startUserUrl)
         reset({
             name: "",
             phone: ""
@@ -143,6 +144,10 @@ const OrderForm = (props) => {
     )
 }
 
-export default connect(null, {
+let mapStateToProps = (state) => ({
+    startUserUrl: state.common.startUserUrl
+})
+
+export default connect(mapStateToProps, {
     sendMail
 })(OrderForm) 

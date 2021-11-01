@@ -9,27 +9,27 @@ export const useSocialItems = () => {
     const menuItems = [
         {
             icon: <InstaIcon/>,
-            href: "google.com"
+            href: "https://instagram.com/shmspace"
         },
         {
             icon: <FbIcon/>,
-            href: "google.com"
+            href: "https://www.facebook.com/1224200440930088/"
         },
         {
             icon: <YoutubeIcon/>,
-            href: "google.com"
+            href: "https://youtube.com/channel/UC3brfLLy3QrecftcrCmSEww"
         },
         {
             icon: <SpotifyIcon/>,
-            href: "google.com"
+            href: "https://open.spotify.com/user/6scbbinf86zxwax6ehr7t6zkf?si=MSBsrpGzRamqOSGIK75I2A&utm_source=copy-link&dl_branch=1"
         },
         {
             icon: <SoundcloudIcon/>,
-            href: "google.com"
+            href: "https://soundcloud.com/shmspace"
         },
         {
             icon: <TikTokIcon/>,
-            href: "google.com"
+            href: "https://vm.tiktok.com/ZM8NEpWCy/"
         }
     ]
 

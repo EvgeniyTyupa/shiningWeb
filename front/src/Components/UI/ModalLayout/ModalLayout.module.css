@@ -16,3 +16,17 @@
 .main svg {
     color: white
 }
+
+@media screen and (max-width: 468px) {
+    .main {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .main {
+        width: 95%;
+        text-align: center;
+    }
+}

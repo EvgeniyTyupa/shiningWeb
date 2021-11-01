@@ -114,5 +114,12 @@
         position: fixed;
         background-color: transparent;
         padding: 40px;
+        z-index: 5;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        padding: 20px;
     }
 }

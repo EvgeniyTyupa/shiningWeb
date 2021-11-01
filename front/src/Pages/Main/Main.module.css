@@ -612,3 +612,42 @@
         margin-block-end: 75px;
     }
 }
+
+@media screen and (max-width: 468px) {
+    .orderContainer {
+        width: 55%;
+    }
+    .aboutTextContainer {
+        width: 95%;
+    } 
+    .doubleSide h2 {
+        margin-block-start: 45px;
+    }
+    .itemsWrapper {
+        padding: 0 10%;
+    }
+    .reviews {
+        padding: 5% 10%;
+    }
+    .reviews h2 {
+        z-index: 2;
+        margin-block-start: 45px;
+        margin-block-end: 45px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .aboutTextContainer {
+        padding: 15px;
+    }
+    .releases {
+        padding-bottom: 45px;
+    }
+    .reviews {
+        padding: 5% 2%;
+    }
+    .aboutBack {
+        height: fit-content;
+        padding: 10px 0;
+    }
+}
