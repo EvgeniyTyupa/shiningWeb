@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom"
 import Navbar from './Components/Navbar/Navbar';
 import MainContainer from './Pages/Main/MainContainer';
 import Footer from './Components/Footer/Footer';
@@ -26,7 +26,6 @@ const App = (props) => {
     props.setStartUserUrl(window.location.href)
   }, [])
 
-
   return(
     <BrowserRouter>
       <div className="main">
@@ -35,6 +34,7 @@ const App = (props) => {
           {props.isMailSended && <MailSuccess/>}
           <Switch>
             <Route path="/" exact render={() => <MainContainer/>}/>
+            <Route path="/thankyou" exact render={() => <MainContainer/>}/>
 
             <Route path="/login" render={() => <LoginContainer/>}/>
             <Route path="/admin" exact render={() => <ProtectedRoute Component={Admin}/>}/>

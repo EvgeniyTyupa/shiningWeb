@@ -6,7 +6,7 @@ import { getReviews } from "../../Redux/googleReducer"
 import Main from "./Main"
 
 const MainContainer = (props) => {
-    const { isFetching, getReviews } = props
+    const { isFetching, getReviews, isMailSended } = props
 
     const [currentTrack, setCurrentTrack] = useState(null)
 
@@ -24,6 +24,12 @@ const MainContainer = (props) => {
     //     getReviews()
     // }, [])
 
+    useEffect(() => {
+        if(isMailSended) {
+          history.push("/thankyou")
+        }
+    }, [isMailSended])
+
     return(
         <>
             {isFetching && <Preloader/>}
@@ -38,7 +44,8 @@ const MainContainer = (props) => {
 }
 
 let mapStateToProps = (state) => ({
-    isFetching: state.common.isFetching
+    isFetching: state.common.isFetching,
+    isMailSended: state.common.isMailSended
 })
 
 export default connect(mapStateToProps, {
