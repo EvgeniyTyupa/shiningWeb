@@ -1,7 +1,7 @@
 
 import Social from '../Social/Social'
 import classes from './Footer.module.css'
-import logo from '../../Assets/icons/logo.svg'
+import logo from '../../Assets/icons/logo.png'
 import { cx } from '../../Utils/classnames'
 import { makeStyles, MenuItem, TextField } from "@material-ui/core"
 import { useTranslation } from 'react-i18next'

@@ -14,7 +14,7 @@ import { cx } from '../../Utils/classnames'
 
 import news_lines from '../../Assets/images/news_lines.svg'
 import releases_lines from '../../Assets/images/release_lines.svg'
-import vinyl from '../../Assets/icons/vinyl.svg'
+import vinyl from '../../Assets/icons/vinyl.png'
 import coma from '../../Assets/images/coma.svg'
 import about1 from '../../Assets/images/about1.jpg'
 

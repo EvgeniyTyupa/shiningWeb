@@ -5,7 +5,7 @@ import { useSocialItems } from './useSoicalItems'
 import { makeStyles, MenuItem, TextField } from "@material-ui/core"
 import { useTranslation } from "react-i18next";
 import { NavLink } from 'react-router-dom';
-import logo from '../../Assets/icons/logo.svg'
+import logo from '../../Assets/icons/logo.png'
 import { cx } from '../../Utils/classnames';
 import Social from '../Social/Social';
 
