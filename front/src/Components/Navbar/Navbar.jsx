@@ -70,9 +70,9 @@ const Navbar = (props) => {
         <nav className={classes.main} data-aos="fade-down">
             <div className={classes.top}>
                 <div className={classes.side}>
-                    <a href="tel:+380507654321">
+                    <a href="tel:+380971084347">
                         <PhoneIcon/>
-                        <span>+380 (50) 756-43-21</span>
+                        <span>+38 (097) 108-43-47</span>
                     </a>
                 </div>
                 <div className={classes.side}>

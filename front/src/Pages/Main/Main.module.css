@@ -390,8 +390,8 @@
     box-sizing: border-box;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: auto;
-    margin-left: 10%;
+    margin-right: 10%;
+    margin-left: auto;
     filter: blur(none);
     box-shadow: 0 0 18px -2px white;
 }

@@ -16,7 +16,7 @@ import news_lines from '../../Assets/images/news_lines.svg'
 import releases_lines from '../../Assets/images/release_lines.svg'
 import vinyl from '../../Assets/icons/vinyl.png'
 import coma from '../../Assets/images/coma.svg'
-import about1 from '../../Assets/images/about1.jpg'
+import about1 from '../../Assets/images/about2.jpg'
 
 import NewsItem from '../../Components/News/NewsItem/NewsItem'
 import CustomButton from '../../Components/UI/Button/Button'
@@ -152,6 +152,7 @@ const Main = (props) => {
                     {reviews.map(item => <ReviewItem item={item} key={item._id}/>)}
                 </ScrollContainer>
                 {/* <CustomButton text={t("actions.review")} className={classes.makeReviewBut}/> */}
+                <CustomButton text="Записатись до студії" className={classes.makeReviewBut} action={() => homeRef.current.scrollIntoView()}/>
             </div>
             {/* <div className={classes.order} ref={orderRef}>
                 <h3>{t("order.title")}</h3>
@@ -179,8 +180,8 @@ const AboutBack = Styled.div`
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(8px);
-  -webkit-filter: blur(8px);
+    filter: blur(0px);
+  -webkit-filter: blur(0px);
     width: 100%;
     height: 100vh;
     position: absolute;

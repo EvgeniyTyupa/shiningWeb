@@ -71,7 +71,7 @@ const Footer = (props) => {
                     </div>
                     <div className={classes.field}>
                         <PhoneIcon/>
-                        <a href="tel:+380507654321">+380 (50) 765-43-21</a>
+                        <a href="tel:+380971084347">+38 (097) 108-43-47</a>
                     </div>
                     <div className={classes.field}>
                         <MailIcon/>
