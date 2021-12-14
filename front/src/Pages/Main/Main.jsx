@@ -177,7 +177,6 @@ const Main = (props) => {
 
 const AboutBack = Styled.div`
     background-image: ${({ image }) => `url(${image})`};
-    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     filter: blur(0px);
